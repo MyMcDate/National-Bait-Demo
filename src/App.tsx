@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import Navigation from './components/Navigation'
@@ -15,6 +15,14 @@ import ShippingPage from './pages/ShippingPage'
 function AppContent() {
   const location = useLocation();
   const isAdminPage = location.pathname === '/admin';
+
+ useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+}, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-green-100">

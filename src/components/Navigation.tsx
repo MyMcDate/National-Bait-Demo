@@ -55,11 +55,11 @@ const Navigation: React.FC = () => {
     </div>
     <Waves className="absolute -bottom-1 -right-1 w-4 h-4 text-emerald-500" />
   </div>
-  <div className="hidden sm:block">
-    <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent">
+  <div>
+    <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent">
       National Bait Inc.
     </h1>
-    <p className="text-sm text-gray-600 -mt-1">Premium Night Crawlers</p>
+    <p className="text-xs sm:text-sm text-gray-600 -mt-1">Premium Night Crawlers</p>
   </div>
 </Link>
 

@@ -384,7 +384,7 @@ const CertificationsPage: React.FC = () => {
               </div>
               
               <p className="text-lg text-emerald-100 leading-relaxed mb-6">
-                National Bait Co. operates in full compliance with all applicable federal, provincial, 
+                National Bait Inc. operates in full compliance with all applicable federal, provincial, 
                 and international regulations governing the harvest, processing, transport, and export 
                 of live fishing bait. Our operations are regularly audited and inspected to ensure 
                 continued adherence to the highest standards of quality, safety, accessibility, and environmental responsibility.

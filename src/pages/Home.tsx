@@ -26,7 +26,7 @@ const Home: React.FC = () => {
                 />
                 <div>
                   <h1 className="text-5xl font-bold leading-tight">
-                    Eagle Bait Co.
+                    National Bait Inc.
                   </h1>
                   <p className="text-xl text-green-200 font-medium">
                     Premium Night Crawlers
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Eagle Bait Co.?
+              Why Choose National Bait Inc.?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We're committed to providing the highest quality live bait with unmatched service
@@ -155,7 +155,7 @@ const Home: React.FC = () => {
             Ready to Improve Your Fishing Success?
           </h2>
           <p className="text-xl text-green-100 mb-8">
-            Join thousands of satisfied customers who trust Eagle Bait Co. for their fishing needs
+            Join thousands of satisfied customers who trust National Bait Inc. for their fishing needs
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">

@@ -190,7 +190,7 @@ const ProductsPage: React.FC = () => {
               
               <p className="text-xl md:text-2xl text-emerald-100 mb-8 leading-relaxed max-w-4xl mx-auto">
                 From world-class fishing bait to premium organic fertilizers - 
-                Eagle Bait Co. delivers quality products for anglers and gardeners alike.
+                National Bait Inc. delivers quality products for anglers and gardeners alike.
               </p>
             </motion.div>
           </div>
@@ -494,7 +494,7 @@ const ProductsPage: React.FC = () => {
             
             <p className="text-xl text-emerald-100 mb-12 max-w-3xl mx-auto">
               Whether you need premium night crawlers for fishing or organic worm castings for your garden, 
-              Eagle Bait Co. delivers exceptional quality products trusted by professionals worldwide.
+              National Bait Inc. delivers exceptional quality products trusted by professionals worldwide.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

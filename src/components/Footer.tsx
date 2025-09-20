@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             
             <p className="text-gray-300 mb-6 max-w-md">
               Your trusted source for premium quality night crawlers and fishing bait. 
-              We've been serving anglers with the finest live bait for over 20 years.
+              We've been serving anglers with the finest live bait for over 60 years.
             </p>
             
             <div className="flex items-center space-x-2 text-green-400">
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               <li className="flex items-center space-x-2">
                 <Phone size={16} className="text-green-400" />
                 <a href="tel:+1234567890" className="text-gray-300 hover:text-green-400 transition-colors">
-                  Fax (905) 278-0209
+                  (905) 278-0180
                 </a>
               </li>
               <li className="flex items-center space-x-2">

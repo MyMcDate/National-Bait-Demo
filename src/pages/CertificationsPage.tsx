@@ -1,9 +1,14 @@
-
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield, Award, CheckCircle, Globe, FileText, Scale, Truck, Leaf, Users, Eye } from 'lucide-react'
 
 const CertificationsPage: React.FC = () => {
+  const [showAODAPDF, setShowAODAPDF] = React.useState(false)
+
+  const handleAODAClick = () => {
+    setShowAODAPDF(true)
+  }
+
   const certifications = [
     {
       icon: Shield,
@@ -148,12 +153,15 @@ const CertificationsPage: React.FC = () => {
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200"
+                className={`group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 ${
+                  cert.title === "AODA Compliance" ? "cursor-pointer" : ""
+                }`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
+                onClick={cert.title === "AODA Compliance" ? handleAODAClick : undefined}
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${cert.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <cert.icon className="w-8 h-8 text-white" />
@@ -167,6 +175,12 @@ const CertificationsPage: React.FC = () => {
                 </div>
                 
                 <p className="text-gray-600 text-sm leading-relaxed">{cert.description}</p>
+                
+                {cert.title === "AODA Compliance" && (
+                  <div className="mt-4 text-center">
+                    <span className="text-purple-600 text-xs font-semibold">Click to view Multi-Year Accessibility Plan</span>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -421,6 +435,86 @@ const CertificationsPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* AODA PDF Modal */}
+      {showAODAPDF && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col mx-auto">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
+              <h3 className="text-2xl font-bold text-gray-900">
+                Multi-Year Accessibility Plan (2025-2030)
+              </h3>
+              <button
+                onClick={() => setShowAODAPDF(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+              >
+                ×
+              </button>
+            </div>
+            
+            <div className="flex-1 p-6 overflow-hidden">
+              <div className="h-full flex flex-col">
+                <div className="text-center mb-6 flex-shrink-0">
+                  <FileText className="w-12 h-12 text-purple-600 mx-auto mb-3" />
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
+                    Multi-Year Accessibility Plan (2025–2030)
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    Prepared in accordance with the Accessibility for Ontarians with Disabilities Act, 2005 (AODA)
+                  </p>
+                </div>
+
+                {/* PDF Viewer */}
+                <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50 flex-1 min-h-0">
+                  <iframe
+                    src="/documents/OfficialAODA.pdf#toolbar=1&navpanes=1&scrollbar=1&view=FitH"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 'none' }}
+                    title="AODA Multi-Year Accessibility Plan (2025-2030)"
+                  >
+                    <div className="flex items-center justify-center h-full bg-gray-100">
+                      <div className="text-center p-8">
+                        <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                        <p className="text-gray-600 mb-4">PDF viewer not supported in your browser.</p>
+                        <a 
+                          href="/documents/OfficialAODA.pdf" 
+                          download="National-Bait-AODA-Plan-2025-2030.pdf"
+                          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                        >
+                          Download PDF
+                        </a>
+                      </div>
+                    </div>
+                  </iframe>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6 flex-shrink-0">
+                  <a 
+                    href="/documents/OfficialAODA.pdf" 
+                    download="National-Bait-AODA-Plan-2025-2030.pdf"
+                    className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors text-center"
+                  >
+                    Download PDF
+                  </a>
+                  <button 
+                    onClick={() => window.open('/documents/OfficialAODA.pdf', '_blank')}
+                    className="border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                  >
+                    Open in New Tab
+                  </button>
+                </div>
+                
+                <div className="mt-4 text-center flex-shrink-0">
+                  <p className="text-gray-500 text-xs">
+                    Having trouble viewing? Try opening in a new tab or downloading the PDF directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

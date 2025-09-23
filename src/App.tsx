@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
+import LoadingPage from './components/LoadingPage'
 import Navigation from './components/Navigation'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
@@ -11,18 +12,17 @@ import Footer from './components/Footer'
 import AdvancedAnalyticsDashboard from './pages/AnalyticsPage'
 import ShippingPage from './pages/ShippingPage'
 
-
 function AppContent() {
   const location = useLocation();
   const isAdminPage = location.pathname === '/admin';
 
- useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  });
-}, [location.pathname]);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-green-100">
@@ -44,6 +44,26 @@ function AppContent() {
 }
 
 function App() {
+  const [showLoading, setShowLoading] = useState(true);
+
+  // Check if user has seen loading page this session
+  useEffect(() => {
+    const hasSeenLoading = sessionStorage.getItem('hasSeenLoading');
+    if (hasSeenLoading) {
+      setShowLoading(false);
+    }
+  }, []);
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem('hasSeenLoading', 'true');
+    setShowLoading(false);
+  };
+
+  // Show loading page first
+  if (showLoading) {
+    return <LoadingPage onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
     <>
       <Toaster 

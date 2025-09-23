@@ -80,12 +80,9 @@ const AdvancedAnalyticsDashboard = () => {
   ];
 
   const regionData = [
-    { name: 'Ontario', value: 35, sales: 4200000, growth: 15 },
-    { name: 'Quebec', value: 22, sales: 2800000, growth: 12 },
-    { name: 'BC', value: 18, sales: 2200000, growth: 18 },
-    { name: 'Alberta', value: 12, sales: 1500000, growth: 8 },
-    { name: 'Atlantic', value: 8, sales: 950000, growth: 22 },
-    { name: 'International', value: 5, sales: 650000, growth: 35 }
+    { name: 'United States', value: 60, sales: 7200000, growth: 18 },
+    { name: 'Europe', value: 35, sales: 4200000, growth: 15 },
+    { name: 'Canada', value: 5, sales: 600000, growth: 12 }
   ];
 
   const qualityMetrics = [
@@ -98,20 +95,17 @@ const AdvancedAnalyticsDashboard = () => {
   ];
 
   const competitorComparison = [
-    { company: 'National Bait', market: 33, quality: 98, price: 85, satisfaction: 96 },
-    { company: 'Premium Bait Solutions', market: 22, quality: 85, price: 70, satisfaction: 82 },
-    { company: 'Rainbow Bait Co.', market: 18, quality: 75, price: 95, satisfaction: 78 },
-    { company: 'Northern Worms', market: 12, quality: 70, price: 98, satisfaction: 72 },
-    { company: 'Others', market: 15, quality: 65, price: 80, satisfaction: 68 }
+    { company: 'National Bait Inc.', market: 65, quality: 98, price: 85, satisfaction: 96 },
+    { company: 'Others', market: 35, quality: 78, price: 82, satisfaction: 75 }
   ];
 
   const temperatureData = [
-    { hour: '00:00', facility1: 2.1, facility2: 2.3, facility3: 2.0, optimal: 2.2 },
-    { hour: '04:00', facility1: 2.0, facility2: 2.2, facility3: 1.9, optimal: 2.2 },
-    { hour: '08:00', facility1: 2.2, facility2: 2.4, facility3: 2.1, optimal: 2.2 },
-    { hour: '12:00', facility1: 2.3, facility2: 2.5, facility3: 2.2, optimal: 2.2 },
-    { hour: '16:00', facility1: 2.4, facility2: 2.6, facility3: 2.3, optimal: 2.2 },
-    { hour: '20:00', facility1: 2.2, facility2: 2.4, facility3: 2.1, optimal: 2.2 }
+    { hour: '00:00', facility1: 35.2, facility2: 34.8, facility3: 35.5, optimal: 35.0 },
+    { hour: '04:00', facility1: 34.9, facility2: 35.1, facility3: 34.7, optimal: 35.0 },
+    { hour: '08:00', facility1: 35.3, facility2: 35.4, facility3: 35.0, optimal: 35.0 },
+    { hour: '12:00', facility1: 35.7, facility2: 35.9, facility3: 35.2, optimal: 35.0 },
+    { hour: '16:00', facility1: 35.8, facility2: 36.0, facility3: 35.6, optimal: 35.0 },
+    { hour: '20:00', facility1: 35.1, facility2: 35.3, facility3: 34.9, optimal: 35.0 }
   ];
 
   const colors = ['#10b981', '#06d6a0', '#14b8a6', '#0d9488', '#047857', '#065f46'];
@@ -369,14 +363,14 @@ const AdvancedAnalyticsDashboard = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
               <Monitor className="w-6 h-6 mr-3 text-emerald-400" />
-              Facility Temperature (°C)
+              Cooler Temperature (°F)
             </h2>
             
             <ResponsiveContainer width="100%" height={250}>
               <LineChart data={temperatureData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
                 <XAxis dataKey="hour" stroke="#9ca3af" />
-                <YAxis domain={[1.5, 3]} stroke="#9ca3af" />
+                <YAxis domain={[34, 36]} stroke="#9ca3af" />
                 <Tooltip 
                   contentStyle={{
                     backgroundColor: 'rgba(0,0,0,0.8)',
@@ -390,21 +384,21 @@ const AdvancedAnalyticsDashboard = () => {
                   dataKey="facility1" 
                   stroke="#10b981" 
                   strokeWidth={2}
-                  name="Facility 1"
+                  name="Cooler 1"
                 />
                 <Line 
                   type="monotone" 
                   dataKey="facility2" 
                   stroke="#14b8a6" 
                   strokeWidth={2}
-                  name="Facility 2"
+                  name="Cooler 2"
                 />
                 <Line 
                   type="monotone" 
                   dataKey="facility3" 
                   stroke="#06d6a0" 
                   strokeWidth={2}
-                  name="Facility 3"
+                  name="Cooler 3"
                 />
                 <Line 
                   type="monotone" 
@@ -420,11 +414,11 @@ const AdvancedAnalyticsDashboard = () => {
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div className="bg-emerald-600/20 p-3 rounded-lg">
                 <div className="text-emerald-300 text-sm">Average Temp</div>
-                <div className="text-white text-xl font-bold">2.2°C</div>
+                <div className="text-white text-xl font-bold">35.2°F</div>
               </div>
               <div className="bg-teal-600/20 p-3 rounded-lg">
-                <div className="text-teal-300 text-sm">Variance</div>
-                <div className="text-white text-xl font-bold">±0.3°C</div>
+                <div className="text-teal-300 text-sm">Range</div>
+                <div className="text-white text-xl font-bold">34-36°F</div>
               </div>
             </div>
           </div>

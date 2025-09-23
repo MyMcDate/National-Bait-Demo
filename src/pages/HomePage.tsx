@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
                 Premium Night Crawlers & Fishing Bait
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Built on a history of quality, innovation, and first-class service for almost four decades. 
+                Built on a history of quality, innovation, and first-class service for almost 6 decades. 
                 Your trusted source for premium night crawlers and fishing bait.
               </p>
               
@@ -108,7 +108,7 @@ const HomePage: React.FC = () => {
               Why Choose National Bait Inc?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built on a history of quality, innovation, and first-class service for almost four decades
+              Built on a history of quality, innovation, and first-class service for almost 6 decades
             </p>
           </motion.div>
 

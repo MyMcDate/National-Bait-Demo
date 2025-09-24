@@ -126,7 +126,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             className="mb-12"
           >
             <h1 className="text-6xl md:text-8xl font-black text-white tracking-wider transform -rotate-2 mb-8">
-              TO DIE FOR
+              
             </h1>
             <h2 className="text-3xl md:text-4xl font-bold text-teal-100 mb-4">
               NATIONAL BAIT INC.
@@ -258,7 +258,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             className="mb-6"
           >
             <h1 className="text-6xl md:text-8xl font-black text-white tracking-wider transform -rotate-2 mb-2">
-              TO DIE FOR
+             
             </h1>
             <div className="flex items-center justify-center gap-4 mb-4">
               <motion.div

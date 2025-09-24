@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import {Fish, Leaf, Award, Truck, ArrowRight, Globe, Thermometer, Calendar, Ruler} from 'lucide-react'
+import {Fish, Leaf, Award, Truck, ArrowRight, Globe, Thermometer, Calendar, Ruler, Package, Snowflake, CheckCircle} from 'lucide-react'
 
 const HomePage: React.FC = () => {
   const features = [
@@ -135,7 +135,7 @@ const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-3xl p-8 md:p-12 border border-teal-200"
+            className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-3xl p-8 md:p-12 border border-teal-200 mb-16"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -185,6 +185,78 @@ const HomePage: React.FC = () => {
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Canadian Nightcrawlers Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl p-8 md:p-12 border border-emerald-200"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-emerald-800 mb-4">
+                  Canadian Nightcrawlers
+                </h3>
+                <h4 className="text-2xl font-semibold text-green-700 mb-6">
+                  Premium Fresh Water Bait
+                </h4>
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                  Unquestionably the favoured fresh water bait by fishermen world-wide. These premium earthworms range from 90mm to 300mm in length with their distinctive characteristics, sourced directly from Canadian soil for superior quality.
+                </p>
+                
+                <div className="mb-8">
+                  <h5 className="text-lg font-semibold text-emerald-700 mb-4">Available Pack Sizes:</h5>
+                  <div className="grid grid-cols-4 gap-3 mb-6">
+                    {[12, 18, 24, 48].map((size) => (
+                      <div key={size} className="bg-white rounded-xl p-4 text-center border border-emerald-200 shadow-sm">
+                        <div className="text-2xl font-bold text-emerald-600">{size}</div>
+                        <div className="text-sm text-gray-600">count</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Snowflake className="w-5 h-5 text-emerald-600" />
+                    <span className="text-gray-700">100% Canadian sourced</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Thermometer className="w-5 h-5 text-emerald-600" />
+                    <span className="text-gray-700">Temperature controlled storage</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-600" />
+                    <span className="text-gray-700">Hand-selected quality</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Package className="w-5 h-5 text-emerald-600" />
+                    <span className="text-gray-700">Fresh weekly delivery</span>
+                  </div>
+                </div>
+
+                <Link
+                  to="/products"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                  View Product Details
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                  <img
+                    src="/Bait_eagle_stand.jpg"
+                    alt="Canadian Nightcrawlers - Premium Fresh Water Bait"
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent"></div>
                 </div>
               </div>
             </div>

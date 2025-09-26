@@ -254,7 +254,7 @@ const HomePage: React.FC = () => {
                   <img
                     src="/Bait_eagle_stand.jpg"
                     alt="Canadian Nightcrawlers - Premium Fresh Water Bait"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-80 object-cover transform scale-75"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent"></div>
                 </div>

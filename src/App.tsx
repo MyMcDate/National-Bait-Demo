@@ -9,7 +9,6 @@ import ProductsPage from './pages/ProductsPage'
 import ContactPage from './pages/ContactPage'
 import CertificationsPage from './pages/CertificationsPage'
 import Footer from './components/Footer'
-import AdvancedAnalyticsDashboard from './pages/AnalyticsPage'
 import ShippingPage from './pages/ShippingPage'
 
 function AppContent() {
@@ -34,7 +33,6 @@ function AppContent() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/certifications" element={<CertificationsPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/analytics" element={<AdvancedAnalyticsDashboard />} />
         <Route path="/shipping" element={<ShippingPage />} />
       </Routes>
       

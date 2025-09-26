@@ -24,7 +24,6 @@ const Navigation: React.FC = () => {
     { path: '/certifications', label: 'Certifications' },
     { path: '/contact', label: 'Contact' },
     { path: '/shipping', label: 'Shipping' },
-    { path: '/analytics', label: 'Analytics' },
     
 
   ]

@@ -65,66 +65,298 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
         animate={{ opacity: 1 }}
         className="fixed inset-0 bg-gradient-to-br from-teal-800 via-teal-600 to-emerald-700 flex items-center justify-center z-50 overflow-hidden"
       >
+        {/* Top Left Product Image - Blum1.png */}
+        <motion.div
+          initial={{ x: -100, y: -100, opacity: 0, scale: 0.6 }}
+          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1.8, ease: "easeOut", delay: 1.2 }}
+          className="absolute top-8 left-8 z-10 hidden xl:block"
+        >
+          <div className="relative">
+            {/* Glowing backdrop */}
+            <div className="absolute inset-0 bg-teal-200/20 rounded-2xl blur-xl scale-110 animate-pulse"></div>
+            
+            {/* Product container */}
+            <motion.div
+              animate={{ 
+                y: [0, -6, 0],
+                rotate: [0, -2, 2, 0]
+              }}
+              transition={{ 
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative w-90 h-60 rounded-2xl overflow-hidden border-3 border-white/40 shadow-xl bg-white/10 backdrop-blur-sm"
+            >
+              <img 
+                src="Blum1.png" 
+                alt="Premium Bait Product - Blum1" 
+                className="w-full h-full object-cover filter brightness-110 contrast-105"
+              />
+              
+              {/* Overlay effects */}
+              <div className="absolute inset-0 bg-gradient-to-t from-teal-800/20 via-transparent to-white/5"></div>
+              
+              {/* Shine effect */}
+              <motion.div
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ duration: 6, repeat: Infinity, repeatDelay: 5 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"
+              ></motion.div>
+
+              {/* Product label */}
+              <div className="absolute bottom-3 left-3 right-3">
+                <div className="bg-black/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
+                  <p className="text-white font-semibold text-xs">Premium Collection</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Floating ring */}
+            <motion.div
+              animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0, 0.2] }}
+              transition={{ duration: 7, repeat: Infinity }}
+              className="absolute inset-0 border-2 border-teal-300/30 rounded-2xl scale-110"
+            ></motion.div>
+          </div>
+        </motion.div>
+
+        {/* Top Right Product Image - Blum2.png */}
+        <motion.div
+          initial={{ x: 100, y: -100, opacity: 0, scale: 0.6 }}
+          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1.8, ease: "easeOut", delay: 1.4 }}
+          className="absolute top-8 right-8 z-10 hidden xl:block"
+        >
+          <div className="relative">
+            {/* Glowing backdrop */}
+            <div className="absolute inset-0 bg-emerald-200/20 rounded-2xl blur-xl scale-110 animate-pulse"></div>
+            
+            {/* Product container */}
+            <motion.div
+              animate={{ 
+                y: [0, -7, 0],
+                rotate: [0, 2, -2, 0]
+              }}
+              transition={{ 
+                duration: 7,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative w-60 h-64 rounded-2xl overflow-hidden border-3 border-white/40 shadow-xl bg-white/10 backdrop-blur-sm"
+            >
+              <img 
+                src="Blum2.png" 
+                alt="Premium Bait Product - Blum2" 
+                className="w-full h-full object-cover filter brightness-110 contrast-105"
+              />
+              
+              {/* Overlay effects */}
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-800/20 via-transparent to-white/5"></div>
+              
+              {/* Shine effect */}
+              <motion.div
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ duration: 5, repeat: Infinity, repeatDelay: 4 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12"
+              ></motion.div>
+
+              {/* Product label */}
+              <div className="absolute bottom-3 left-3 right-3">
+                <div className="bg-black/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
+                  <p className="text-white font-semibold text-xs">Fresh & Quality</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Floating ring */}
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0, 0.2] }}
+              transition={{ duration: 6, repeat: Infinity }}
+              className="absolute inset-0 border-2 border-emerald-300/30 rounded-2xl scale-110"
+            ></motion.div>
+          </div>
+        </motion.div>
+
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"></div>
         </div>
 
-        {/* Majestic Eagle Logo - Top Center */}
+        {/* Left Side Product Image - iPhone Style */}
         <motion.div
-          initial={{ scale: 0, opacity: 0, y: -100 }}
-          animate={{ scale: 1, opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
-          className="absolute top-12 left-1/2 transform -translate-x-1/2 z-20"
+          initial={{ x: -100, opacity: 0, scale: 0.8 }}
+          animate={{ x: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.8 }}
+          className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block"
         >
           <div className="relative">
-            {/* Glowing backdrop */}
-            <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl scale-150"></div>
-            <div className="absolute inset-0 bg-emerald-400/30 rounded-full blur-2xl scale-125 animate-pulse"></div>
+            {/* Glowing backdrop for product image */}
+            <div className="absolute inset-0 bg-white/20 rounded-2xl blur-2xl scale-110"></div>
+            <div className="absolute inset-0 bg-teal-400/20 rounded-2xl blur-xl scale-105 animate-pulse"></div>
             
-            {/* Eagle image with effects */}
+            {/* Product image container with iPhone-style border */}
             <motion.div
               animate={{ 
-                scale: [1, 1.05, 1],
-                rotate: [0, 1, -1, 0]
+                y: [0, -10, 0],
+                rotate: [0, -1, 1, 0]
               }}
               transition={{ 
-                duration: 4,
+                duration: 7,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl"
+              className="relative w-80 h-96 rounded-2xl overflow-hidden border-4 border-white/30 shadow-2xl bg-black/20 backdrop-blur-sm"
             >
               <img 
-                src="eagle-logo.jpg" 
-                alt="Majestic Eagle Logo" 
-                className="w-full h-full object-cover"
+                src="Bait_post2.jpg" 
+                alt="Premium Bait Products Collection - Left" 
+                className="w-full h-full object-cover filter brightness-105 contrast-105"
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent"></div>
+              
+              {/* iPhone-style overlay effects */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10"></div>
+              
+              {/* Subtle shine effect */}
+              <motion.div
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ duration: 5, repeat: Infinity, repeatDelay: 4 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"
+              ></motion.div>
+
+              {/* Product label overlay */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <p className="text-white font-bold text-sm">Premium Bait</p>
+                  <p className="text-teal-200 text-xs">Fresh & Available</p>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Radiating rings */}
+            {/* Floating rings around product image */}
             <motion.div
-              animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="absolute inset-0 border-2 border-white/30 rounded-full scale-125"
-            ></motion.div>
-            <motion.div
-              animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0, 0.2] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-              className="absolute inset-0 border-2 border-emerald-300/30 rounded-full scale-150"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0, 0.3] }}
+              transition={{ duration: 6, repeat: Infinity }}
+              className="absolute inset-0 border-2 border-teal-300/30 rounded-2xl scale-110"
             ></motion.div>
           </div>
         </motion.div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-8 mt-24">
+        {/* Right Side Product Image - iPhone Style */}
+        <motion.div
+          initial={{ x: 100, opacity: 0, scale: 0.8 }}
+          animate={{ x: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 1.0 }}
+          className="absolute right-8 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block"
+        >
+          <div className="relative">
+            {/* Glowing backdrop for product image */}
+            <div className="absolute inset-0 bg-white/20 rounded-2xl blur-2xl scale-110"></div>
+            <div className="absolute inset-0 bg-emerald-400/20 rounded-2xl blur-xl scale-105 animate-pulse"></div>
+            
+            {/* Product image container with iPhone-style border */}
+            <motion.div
+              animate={{ 
+                y: [0, -8, 0],
+                rotate: [0, 1, -1, 0]
+              }}
+              transition={{ 
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative w-100 h-[26rem] rounded-2xl overflow-hidden border-4 border-white/30 shadow-2xl bg-black/20 backdrop-blur-sm"
+            >
+              <img 
+                src="baitproducts.jpg" 
+                alt="Premium Bait Products in Fridge - iPhone Style" 
+                className="w-full h-full object-cover filter brightness-105 contrast-105"
+              />
+              
+              {/* iPhone-style overlay effects */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10"></div>
+              
+              {/* Subtle shine effect */}
+              <motion.div
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ duration: 4, repeat: Infinity, repeatDelay: 3 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"
+              ></motion.div>
+
+              {/* Product label overlay */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <p className="text-white font-bold text-sm">Premium Bait</p>
+                  <p className="text-teal-200 text-xs">Fresh & Ready</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Floating rings around product image */}
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              className="absolute inset-0 border-2 border-teal-300/30 rounded-2xl scale-110"
+            ></motion.div>
+          </div>
+        </motion.div>
+
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
             className="mb-12"
           >
+            {/* Eagle Logo - Perfectly Centered Above Title */}
+            <motion.div
+              initial={{ scale: 0, opacity: 0, y: -100 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+              className="flex justify-center mb-8"
+            >
+              <div className="relative">
+                {/* Glowing backdrop */}
+                <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl scale-150"></div>
+                <div className="absolute inset-0 bg-emerald-400/30 rounded-full blur-2xl scale-125 animate-pulse"></div>
+                
+                {/* Eagle image with effects */}
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    rotate: [0, 1, -1, 0]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl"
+                >
+                  <img 
+                    src="eagle-logo.jpg" 
+                    alt="Majestic Eagle Logo" 
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent"></div>
+                </motion.div>
+
+                {/* Radiating rings */}
+                <motion.div
+                  animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute inset-0 border-2 border-white/30 rounded-full scale-125"
+                ></motion.div>
+                <motion.div
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0, 0.2] }}
+                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                  className="absolute inset-0 border-2 border-emerald-300/30 rounded-full scale-150"
+                ></motion.div>
+              </div>
+            </motion.div>
+
             <h1 className="text-6xl md:text-8xl font-black text-white tracking-wider transform -rotate-2 mb-8">
               
             </h1>
@@ -180,86 +412,84 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"></div>
       </div>
 
-      {/* Majestic Eagle Logo - Prominent Center Position */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0, rotate: -180 }}
-        animate={{ scale: 1, opacity: 1, rotate: 0 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20"
-      >
-        <div className="relative">
-          {/* Multiple glowing backdrops for dramatic effect */}
-          <div className="absolute inset-0 bg-white/30 rounded-full blur-3xl scale-200 animate-pulse"></div>
-          <div className="absolute inset-0 bg-emerald-400/40 rounded-full blur-2xl scale-150"></div>
-          <div className="absolute inset-0 bg-teal-300/30 rounded-full blur-xl scale-125"></div>
-          
-          {/* Main eagle image with enhanced styling */}
-          <motion.div
-            animate={{ 
-              scale: [1, 1.08, 1],
-              rotate: [0, 2, -2, 0],
-              y: [0, -5, 0]
-            }}
-            transition={{ 
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/50 shadow-2xl"
-          >
-            <img 
-              src="eagle-logo.jpg" 
-              alt="Majestic Eagle - National Bait Logo" 
-              className="w-full h-full object-cover filter brightness-110 contrast-110"
-            />
-            {/* Artistic overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/30 via-transparent to-emerald-400/10"></div>
+
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-8">
+        {/* Eagle Logo positioned above National Bait Inc */}
+        <motion.div
+          initial={{ scale: 0, opacity: 0, y: -50 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="relative">
+            {/* Multiple glowing backdrops for dramatic effect */}
+            <div className="absolute inset-0 bg-white/30 rounded-full blur-3xl scale-200 animate-pulse"></div>
+            <div className="absolute inset-0 bg-emerald-400/40 rounded-full blur-2xl scale-150"></div>
+            <div className="absolute inset-0 bg-teal-300/30 rounded-full blur-xl scale-125"></div>
             
-            {/* Shine effect */}
+            {/* Main eagle image with enhanced styling */}
             <motion.div
-              animate={{ x: ['-100%', '200%'] }}
-              transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12"
+              animate={{ 
+                scale: [1, 1.08, 1],
+                rotate: [0, 2, -2, 0],
+                y: [0, -5, 0]
+              }}
+              transition={{ 
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white/50 shadow-2xl"
+            >
+              <img 
+                src="eagle-logo.jpg" 
+                alt="Majestic Eagle - National Bait Logo" 
+                className="w-full h-full object-cover filter brightness-110 contrast-110"
+              />
+              {/* Artistic overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-teal-900/30 via-transparent to-emerald-400/10"></div>
+              
+              {/* Shine effect */}
+              <motion.div
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12"
+              ></motion.div>
+            </motion.div>
+
+            {/* Dynamic radiating rings */}
+            <motion.div
+              animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute inset-0 border-3 border-white/40 rounded-full scale-125"
             ></motion.div>
-          </motion.div>
+            <motion.div
+              animate={{ scale: [1, 1.6, 1], opacity: [0.3, 0, 0.3] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+              className="absolute inset-0 border-2 border-emerald-300/40 rounded-full scale-150"
+            ></motion.div>
+            <motion.div
+              animate={{ scale: [1, 1.8, 1], opacity: [0.2, 0, 0.2] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 2 }}
+              className="absolute inset-0 border-2 border-teal-200/30 rounded-full scale-175"
+            ></motion.div>
+          </div>
+        </motion.div>
 
-          {/* Dynamic radiating rings */}
-          <motion.div
-            animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0, 0.4] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute inset-0 border-3 border-white/40 rounded-full scale-125"
-          ></motion.div>
-          <motion.div
-            animate={{ scale: [1, 1.6, 1], opacity: [0.3, 0, 0.3] }}
-            transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-            className="absolute inset-0 border-2 border-emerald-300/40 rounded-full scale-150"
-          ></motion.div>
-          <motion.div
-            animate={{ scale: [1, 1.8, 1], opacity: [0.2, 0, 0.2] }}
-            transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-            className="absolute inset-0 border-2 border-teal-200/30 rounded-full scale-175"
-          ></motion.div>
-        </div>
-      </motion.div>
-
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-8 mt-32">
-        {/* Main Logo Section */}
+        {/* Main Logo Section - National Bait Inc Centered */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
           className="mb-8"
         >
-          {/* Large Title Text */}
+          {/* National Bait Inc Title */}
           <motion.div
-            initial={{ y: -50, opacity: 0 }}
+            initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
             className="mb-6"
           >
-            <h1 className="text-6xl md:text-8xl font-black text-white tracking-wider transform -rotate-2 mb-2">
-             
-            </h1>
             <div className="flex items-center justify-center gap-4 mb-4">
               <motion.div
                 animate={{ 
@@ -275,8 +505,8 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
               >
                 <Fish className="w-8 h-8 text-white" />
               </motion.div>
-              <div className="text-right">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <div className="text-center">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
                   NATIONAL BAIT INC.
                 </h2>
                 <p className="text-lg text-teal-100 italic font-medium">
@@ -291,9 +521,9 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
 
           {/* Product Showcase */}
           <motion.div
-            initial={{ x: 50, opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
             className="mb-8"
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-teal-300/30">
@@ -318,7 +548,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
+          transition={{ duration: 0.8, delay: 1.6 }}
           className="mb-8"
         >
           <p className="text-xl md:text-2xl text-teal-100 font-bold">
@@ -360,7 +590,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
+            transition={{ delay: 1.8 }}
             className="text-white/80 text-sm font-semibold"
           >
             {selectedLanguage === 'de' ? `Lädt... ${progress}%` : `Loading... ${progress}%`}

@@ -51,8 +51,7 @@ const HomePage: React.FC = () => {
                 Premium Night Crawlers & Fishing Bait
               </h2>
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Built on a history of quality, innovation, and first-class service for almost 6 decades. 
-                Your trusted source for premium night crawlers and fishing bait.
+                Canada's trusted supplier of premium night crawlers and high quality fishing bait since 1965 built on a 60-year legacy of quality, innovation, and first class service.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

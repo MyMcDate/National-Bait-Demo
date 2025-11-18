@@ -60,6 +60,8 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
 
   if (showLanguageSelect) {
     return (
+      
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -121,6 +123,63 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             ></motion.div>
           </div>
         </motion.div>
+
+        {/* Top Center Product Image - 100-box.jpg */}
+<motion.div
+  initial={{ y: -100, opacity: 0, scale: 0.6 }}
+  animate={{ y: 0, opacity: 1, scale: 1 }}
+  transition={{ duration: 1.8, ease: "easeOut", delay: 1.3 }}
+  className="absolute top-8 left-[58%] transform -translate-x-1/2 z-10 hidden xl:block"
+>
+  <div className="relative">
+    {/* Glowing backdrop */}
+    <div className="absolute inset-0 bg-cyan-200/20 rounded-2xl blur-xl scale-110 animate-pulse"></div>
+    
+    {/* Product container */}
+    <motion.div
+      animate={{ 
+        y: [0, -6, 0],
+        rotate: [0, -1, 1, 0]
+      }}
+      transition={{ 
+        duration: 7.5,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      className="relative w-60 h-60 rounded-2xl overflow-hidden border-3 border-white/40 shadow-xl bg-white/10 backdrop-blur-sm"
+    >
+      <img 
+        src="100-box.jpg" 
+        alt="Premium Bait Box Packaging - 100 Count" 
+        className="w-full h-full object-cover filter brightness-110 contrast-105"
+      />
+      
+      {/* Overlay effects */}
+      <div className="absolute inset-0 bg-gradient-to-t from-cyan-800/20 via-transparent to-white/5"></div>
+      
+      {/* Shine effect */}
+      <motion.div
+        animate={{ x: ['-100%', '200%'] }}
+        transition={{ duration: 5.5, repeat: Infinity, repeatDelay: 4.5 }}
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12"
+      ></motion.div>
+
+      {/* Product label */}
+      <div className="absolute bottom-3 left-3 right-3">
+        <div className="bg-black/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
+          <p className="text-white font-semibold text-xs">Professional Packaging</p>
+        </div>
+      </div>
+    </motion.div>
+
+    {/* Floating ring */}
+    <motion.div
+      animate={{ scale: [1, 1.18, 1], opacity: [0.2, 0, 0.2] }}
+      transition={{ duration: 6.5, repeat: Infinity }}
+      className="absolute inset-0 border-2 border-cyan-300/30 rounded-2xl scale-110"
+    ></motion.div>
+  </div>
+</motion.div>
 
         {/* Top Right Product Image - Blum2.png */}
         <motion.div

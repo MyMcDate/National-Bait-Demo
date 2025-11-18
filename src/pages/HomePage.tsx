@@ -190,75 +190,128 @@ const HomePage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Canadian Nightcrawlers Section */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl p-8 md:p-12 border border-emerald-200"
+            className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-3xl p-8 md:p-12 border border-teal-200 mb-16 shadow-xl"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-emerald-800 mb-4">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-700 to-emerald-600 bg-clip-text text-transparent mb-3">
                   Canadian Nightcrawlers
                 </h3>
-                <h4 className="text-2xl font-semibold text-green-700 mb-6">
+                <h4 className="text-2xl md:text-3xl font-semibold text-emerald-700 mb-6">
                   Premium Fresh Water Bait
                 </h4>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                  Unquestionably the favoured fresh water bait by fishermen world-wide. These premium earthworms range from 90mm to 300mm in length with their distinctive characteristics, sourced directly from Canadian soil for superior quality.
+                  Unquestionably the favoured fresh water bait by fishermen worldwide. These premium earthworms range from 90mm to 300mm in length with their distinctive characteristics, sourced directly from Canadian soil for superior quality.
                 </p>
-                
+
+                {/* Available Pack Sizes */}
                 <div className="mb-8">
-                  <h5 className="text-lg font-semibold text-emerald-700 mb-4">Available Pack Sizes:</h5>
-                  <div className="grid grid-cols-4 gap-3 mb-6">
-                    {[12, 18, 24, 48].map((size) => (
-                      <div key={size} className="bg-white rounded-xl p-4 text-center border border-emerald-200 shadow-sm">
-                        <div className="text-2xl font-bold text-emerald-600">{size}</div>
-                        <div className="text-sm text-gray-600">count</div>
-                      </div>
+                  <h5 className="text-xl font-bold text-teal-800 mb-4">Available Pack Sizes</h5>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['12 count', '18 count', '24 count', '48 count'].map((size) => (
+                      <motion.div
+                        key={size}
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-white rounded-xl p-4 shadow-md border border-teal-200 text-center"
+                      >
+                        <Package className="w-6 h-6 text-teal-600 mx-auto mb-2" />
+                        <span className="text-gray-800 font-semibold">{size}</span>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
-
+                
+                {/* Features Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  <div className="flex items-center space-x-3">
-                    <Snowflake className="w-5 h-5 text-emerald-600" />
-                    <span className="text-gray-700">100% Canadian sourced</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Thermometer className="w-5 h-5 text-emerald-600" />
-                    <span className="text-gray-700">Temperature controlled storage</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600" />
-                    <span className="text-gray-700">Hand-selected quality</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Package className="w-5 h-5 text-emerald-600" />
-                    <span className="text-gray-700">Fresh weekly delivery</span>
-                  </div>
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm"
+                  >
+                    <Globe className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">100% Canadian Sourced</span>
+                  </motion.div>
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm"
+                  >
+                    <Thermometer className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">Temperature Controlled</span>
+                  </motion.div>
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm"
+                  >
+                    <Award className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">Hand-Selected Quality</span>
+                  </motion.div>
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm"
+                  >
+                    <Calendar className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">Fresh Weekly Delivery</span>
+                  </motion.div>
                 </div>
 
-                <Link
-                  to="/products"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                >
-                  View Product Details
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                <Link to="/products">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 text-white text-lg font-bold rounded-2xl hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-2xl"
+                  >
+                    Explore Our Premium Bait
+                    <ArrowRight className="ml-3 w-5 h-5" />
+                  </motion.button>
                 </Link>
-              </div>
+              </motion.div>
 
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-teal-200"
+                >
                   <img
-                    src="/Bait_eagle_stand.jpg"
-                    alt="Canadian Nightcrawlers - Premium Fresh Water Bait"
-                    className="w-full h-80 object-cover transform scale-75"
+                    src="/Night Crawlers Fridge.jpg"
+                    alt="Premium Canadian Night Crawlers"
+                    className="w-full object-cover"
+                    style={{ height: '512px', width: '236px', margin: '0 auto' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent"></div>
-                </div>
-              </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-900/30 via-transparent to-emerald-900/10"></div>
+                  
+                  {/* Premium Badge */}
+                  <motion.div
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-white px-4 py-2 rounded-full font-bold shadow-xl border-2 border-white text-sm"
+                  >
+                    Premium Quality
+                  </motion.div>
+
+                  {/* Canadian Flag Indicator */}
+                  <motion.div
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 2.5, repeat: Infinity }}
+                    className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full font-bold shadow-xl border-2 border-teal-200 text-sm flex items-center space-x-2"
+                  >
+                    <span className="text-red-600">🍁</span>
+                    <span className="text-teal-700">100% Canadian</span>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

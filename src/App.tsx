@@ -10,6 +10,7 @@ import ContactPage from './pages/ContactPage'
 import CertificationsPage from './pages/CertificationsPage'
 import Footer from './components/Footer'
 import ShippingPage from './pages/ShippingPage'
+import PackagingPage from './pages/PackagingPages'
 
 function AppContent() {
   const location = useLocation();
@@ -34,6 +35,7 @@ function AppContent() {
         <Route path="/certifications" element={<CertificationsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/shipping" element={<ShippingPage />} />
+        <Route path="/packaging" element={<PackagingPage />} />
       </Routes>
       
       {!isAdminPage && <Footer />}

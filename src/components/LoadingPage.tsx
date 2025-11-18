@@ -501,7 +501,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
               className="relative w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white/50 shadow-2xl"
             >
               <img 
-                src="eagle-logo.jpg" 
+                src="PNG-05.png" 
                 alt="Majestic Eagle - National Bait Logo" 
                 className="w-full h-full object-cover filter brightness-110 contrast-110"
               />

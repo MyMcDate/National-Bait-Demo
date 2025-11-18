@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -25,8 +24,6 @@ const Navigation: React.FC = () => {
     { path: '/certifications', label: 'Certifications' },
     { path: '/contact', label: 'Contact' },
     { path: '/shipping', label: 'Shipping' },
-    
-
   ]
 
   return (
@@ -35,18 +32,18 @@ const Navigation: React.FC = () => {
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-emerald-100' 
+          ? 'backdrop-blur-md shadow-lg border-b border-[#80EF80]/30' 
           : 'bg-transparent'
       }`}
+      style={scrolled ? { backgroundColor: '#0E3B24dd' } : {}}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-
-{/* Logo */}
+          {/* Logo */}
           <Link to="/" className="flex items-center group -ml-20">
             <img 
-              src="/PNG-01.png" 
+              src="/PNG-03.png" 
               alt="National Bait Inc Logo" 
               className="h-100 w-auto object-contain"
             />
@@ -60,15 +57,16 @@ const Navigation: React.FC = () => {
                 to={item.path}
                 className={`relative px-4 py-2 rounded-lg transition-all duration-300 font-medium ${
                   location.pathname === item.path
-                    ? 'text-emerald-700 bg-emerald-50'
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50/50'
+                    ? 'text-white'
+                    : 'text-white hover:text-[#80EF80]'
                 }`}
               >
                 {item.label}
                 {location.pathname === item.path && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-emerald-100 rounded-lg -z-10"
+                    className="absolute inset-0 rounded-lg -z-10"
+                    style={{ backgroundColor: '#80EF8030' }}
                     initial={false}
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
@@ -80,7 +78,8 @@ const Navigation: React.FC = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+            style={{ backgroundColor: '#80EF8020' }}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -90,7 +89,8 @@ const Navigation: React.FC = () => {
         <motion.div
           initial={false}
           animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-          className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md rounded-b-2xl border-t border-emerald-100"
+          className="md:hidden overflow-hidden backdrop-blur-md rounded-b-2xl border-t"
+          style={{ backgroundColor: '#0E3B24dd', borderColor: '#80EF8030' }}
         >
           <div className="px-4 py-6 space-y-3">
             {navItems.map((item) => (
@@ -100,9 +100,13 @@ const Navigation: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
                   location.pathname === item.path
-                    ? 'text-emerald-700 bg-emerald-50 border-l-4 border-emerald-500'
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50/50'
+                    ? 'text-white border-l-4'
+                    : 'text-white hover:text-[#80EF80] hover:bg-white/10'
                 }`}
+                style={location.pathname === item.path ? { 
+                  backgroundColor: '#80EF8020',
+                  borderColor: '#80EF80'
+                } : {}}
               >
                 {item.label}
               </Link>

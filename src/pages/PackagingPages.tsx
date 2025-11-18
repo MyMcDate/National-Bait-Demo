@@ -115,7 +115,7 @@ const PackagingPage: React.FC = () => {
   ]
 
   return (
-    <div className="pt-20 bg-white">
+    <div className="pt-20 bg-whit">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>

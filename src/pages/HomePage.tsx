@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
   ]
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #000000 0%, #0A1C22 100%)' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#0B1418' }}>
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #000000 0%, #0A1C22 50%, #000000 100%)' }}></div>
@@ -51,7 +51,8 @@ const HomePage: React.FC = () => {
                 Premium Night Crawlers & Fishing Bait
               </h2>
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Canada's trusted supplier of premium night crawlers and high quality fishing bait since 1965 built on a 60-year legacy of quality, innovation, and first class service.
+                Built on a history of quality, innovation, and first-class service for almost 6 decades. 
+                Your trusted source for premium night crawlers and fishing bait.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -97,7 +98,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Why Choose National Bait Inc Section */}
-      <section className="py-20" style={{ background: 'linear-gradient(180deg, #0A1C22 0%, #101B24 100%)' }}>
+      <section className="py-20" style={{ backgroundColor: '#0B1418' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -206,7 +207,7 @@ const HomePage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="rounded-3xl p-8 md:p-12 mb-16 shadow-xl border"
             style={{ 
-              background: 'linear-gradient(135deg, #000000 0%, #101B24 100%)',
+              background: 'linear-gradient(135deg, #000000 0%, #0A1C22 100%)',
               borderColor: '#92E68E40'
             }}
           >

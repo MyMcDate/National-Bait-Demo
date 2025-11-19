@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Ruler, Palette, Globe, Award, Thermometer, Package, CheckCircle, Star, Leaf, Sprout, Recycle, Users } from 'lucide-react'
@@ -10,28 +9,28 @@ const ProductsPage: React.FC = () => {
       title: "Size Range",
       value: "90mm - 300mm",
       description: "Length varies from 90 millimeters to 300 millimeters",
-      color: "from-blue-500 to-indigo-600"
+      color: "#92E68E"
     },
     {
       icon: Palette,
       title: "Coloration",
       value: "Light Pinkish-Brown",
       description: "Distinctive natural coloring that attracts fish",
-      color: "from-pink-500 to-rose-600"
+      color: "#80EF80"
     },
     {
       icon: Globe,
       title: "Origin",
       value: "European Heritage",
       description: "Introduced to North America by European settlers",
-      color: "from-emerald-500 to-teal-600"
+      color: "#8CBD9B"
     },
     {
       icon: Award,
       title: "Quality Grade",
       value: "Premium A+",
       description: "Highest quality grade for freshwater fishing",
-      color: "from-amber-500 to-orange-600"
+      color: "#92E68E"
     }
   ]
 
@@ -41,28 +40,28 @@ const ProductsPage: React.FC = () => {
       title: "Organic Content",
       value: "100% Natural",
       description: "Pure organic worm castings with no synthetic additives",
-      color: "from-green-500 to-emerald-600"
+      color: "#8CBD9B"
     },
     {
       icon: Sprout,
       title: "Nutrient Rich",
       value: "NPK Enhanced",
       description: "High in nitrogen, phosphorus, and potassium",
-      color: "from-blue-500 to-teal-600"
+      color: "#80EF80"
     },
     {
       icon: Recycle,
       title: "Eco-Friendly",
       value: "Sustainable",
       description: "Environmentally responsible production process",
-      color: "from-emerald-500 to-green-600"
+      color: "#92E68E"
     },
     {
       icon: Package,
       title: "Packaging",
       value: "Various Sizes",
       description: "Available in retail and bulk commercial quantities",
-      color: "from-amber-500 to-orange-600"
+      color: "#8CBD9B"
     }
   ]
 
@@ -132,15 +131,6 @@ const ProductsPage: React.FC = () => {
     }
   ]
 
-  const nightCrawlerFeatures = [
-    "Premium Lumbricus Terrestris species",
-    "Hand-selected for size and quality",
-    "Climate-controlled storage facilities",
-    "Year-round availability guarantee",
-    "Worldwide shipping capabilities",
-    "Bulk and retail packaging options"
-  ]
-
   const castingsFeatures = [
     "100% pure worm castings - no fillers",
     "Odorless and easy to apply",
@@ -151,10 +141,10 @@ const ProductsPage: React.FC = () => {
   ]
 
   return (
-    <div className="pt-20">
+    <div className="pt-20" style={{ backgroundColor: '#0B1418' }}>
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3696170/pexels-photo-3696170.jpeg?_gl=1*1q6cflu*_ga*MzUxMzgwOTM5LjE3NTU3NTUxNTM.*_ga_8JE65Q40S6*czE3NTU4MDQ5NzkkbzMkZzEkdDE3NTU4MDUwMzYkajMkbDAkaDA.')] bg-cover bg-center opacity-15"></div>
+      <section className="relative py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #0A1C22 100%)' }}>
+        <div className="absolute inset-0 opacity-10" style={{ background: `radial-gradient(circle at 30% 50%, #80EF80 0%, transparent 60%), radial-gradient(circle at 70% 70%, #8CBD9B 0%, transparent 60%)` }}></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Logo Section */}
@@ -164,7 +154,7 @@ const ProductsPage: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+            <div className="flex items-center space-x-4 bg-white/5 backdrop-blur-md rounded-2xl p-4 border" style={{ borderColor: '#8CBD9B40' }}>
               <img 
                 src="https://static.lumi.new/d0/d03bedfe1addedcb8b07b86326af17ae.webp" 
                 alt="Eagle Bait Co. Logo" 
@@ -172,7 +162,7 @@ const ProductsPage: React.FC = () => {
               />
               <div>
                 <h1 className="text-2xl font-bold text-white">National Bait</h1>
-                <p className="text-emerald-200 text-sm">Premium Night Crawlers & Organic Products</p>
+                <p className="text-sm" style={{ color: '#92E68E' }}>Premium Night Crawlers & Organic Products</p>
               </div>
             </div>
           </motion.div>
@@ -183,12 +173,12 @@ const ProductsPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Premium
-                <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent"> Products</span>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+                <span className="text-white">Premium </span>
+                <span className="bg-gradient-to-r from-[#8CBD9B] via-[#80EF80] to-[#92E68E] bg-clip-text text-transparent">Products</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-emerald-100 mb-8 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
                 From world-class fishing bait to premium organic fertilizers - 
                 National Bait Inc. delivers quality products for anglers and gardeners alike.
               </p>
@@ -197,32 +187,34 @@ const ProductsPage: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             <motion.div
-              className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20"
+              className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border"
+              style={{ borderColor: '#8CBD9B40' }}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
               <h2 className="text-3xl font-bold text-white mb-4">Night Crawlers</h2>
-              <p className="text-emerald-100 mb-6">Premium Lumbricus Terrestris - the world's favoured freshwater fishing bait</p>
+              <p className="text-gray-300 mb-6">Premium Lumbricus Terrestris - the world's favoured freshwater fishing bait</p>
               <div className="flex flex-wrap gap-3">
-                <span className="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full text-sm font-medium">90-300mm</span>
-                <span className="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full text-sm font-medium">Premium Grade</span>
-                <span className="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full text-sm font-medium">Year-Round</span>
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-black" style={{ backgroundColor: '#92E68E' }}>90-300mm</span>
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-black" style={{ backgroundColor: '#80EF80' }}>Premium Grade</span>
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-black" style={{ backgroundColor: '#8CBD9B' }}>Year-Round</span>
               </div>
             </motion.div>
 
             <motion.div
-              className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20"
+              className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border"
+              style={{ borderColor: '#92E68E40' }}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
             >
               <h2 className="text-3xl font-bold text-white mb-4">Worm Castings</h2>
-              <p className="text-emerald-100 mb-6">Blum Premium Earth Worm Castings - nature's perfect organic fertilizer</p>
+              <p className="text-gray-300 mb-6">Blum Premium Earth Worm Castings - nature's perfect organic fertilizer</p>
               <div className="flex flex-wrap gap-3">
-                <span className="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium">100% Organic</span>
-                <span className="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium">Nutrient Rich</span>
-                <span className="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium">Commercial Grade</span>
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-black" style={{ backgroundColor: '#8CBD9B' }}>100% Organic</span>
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-black" style={{ backgroundColor: '#80EF80' }}>Nutrient Rich</span>
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-black" style={{ backgroundColor: '#92E68E' }}>Commercial Grade</span>
               </div>
             </motion.div>
           </div>
@@ -230,7 +222,7 @@ const ProductsPage: React.FC = () => {
       </section>
 
       {/* Night Crawlers Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24" style={{ backgroundColor: '#0B1418' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -239,11 +231,11 @@ const ProductsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="text-emerald-600 italic">Lumbricus Terrestris</span>
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent"> Night Crawlers</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span style={{ color: '#8CBD9B', fontStyle: 'italic' }}>Lumbricus Terrestris </span>
+              <span className="bg-gradient-to-r from-[#80EF80] to-[#92E68E] bg-clip-text text-transparent">Night Crawlers</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Premium earthworms, also known as American night crawlers or Canadian dew worms
             </p>
           </motion.div>
@@ -256,38 +248,38 @@ const ProductsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 mb-12">
-              <h3 className="text-3xl font-bold text-center text-gray-900 mb-8">Professional Bait Packaging</h3>
+            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 mb-12 border" style={{ borderColor: '#8CBD9B40' }}>
+              <h3 className="text-3xl font-bold text-center text-white mb-8">Professional Bait Packaging</h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <img
                     src="/baitproducts.jpg"
                     alt="Professional Night Crawler Bait Packaging"
-                    className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                    className="w-full h-80 object-cover rounded-2xl shadow-lg border-2" style={{ borderColor: '#92E68E40' }}
                   />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">Retail-Ready Packaging</h4>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <h4 className="text-2xl font-bold text-white mb-4">Retail-Ready Packaging</h4>
+                  <p className="text-gray-400 mb-6 leading-relaxed">
                     Our night crawlers come in professional, consumer-friendly packaging designed for retail environments. 
                     Each container maintains optimal moisture and temperature conditions to keep your bait fresh and active.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500" />
-                      <span className="text-gray-700">Moisture-controlled containers</span>
+                      <CheckCircle className="w-5 h-5" style={{ color: '#80EF80' }} />
+                      <span className="text-gray-300">Moisture-controlled containers</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500" />
-                      <span className="text-gray-700">Clear visibility for quality inspection</span>
+                      <CheckCircle className="w-5 h-5" style={{ color: '#92E68E' }} />
+                      <span className="text-gray-300">Clear visibility for quality inspection</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500" />
-                      <span className="text-gray-700">Extended shelf life guarantee</span>
+                      <CheckCircle className="w-5 h-5" style={{ color: '#8CBD9B' }} />
+                      <span className="text-gray-300">Extended shelf life guarantee</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500" />
-                      <span className="text-gray-700">Professional branding and labeling</span>
+                      <CheckCircle className="w-5 h-5" style={{ color: '#80EF80' }} />
+                      <span className="text-gray-300">Professional branding and labeling</span>
                     </li>
                   </ul>
                 </div>
@@ -299,20 +291,22 @@ const ProductsPage: React.FC = () => {
             {nightCrawlerSpecs.map((spec, index) => (
               <motion.div
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200"
+                className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/10"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = `${spec.color}50`}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${spec.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <spec.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: spec.color }}>
+                  <spec.icon className="w-8 h-8 text-black" />
                 </div>
                 
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{spec.title}</h3>
-                <div className="text-2xl font-bold text-emerald-600 mb-3">{spec.value}</div>
-                <p className="text-gray-600 text-sm leading-relaxed">{spec.description}</p>
+                <h3 className="text-lg font-bold text-white mb-2">{spec.title}</h3>
+                <div className="text-2xl font-bold mb-3" style={{ color: spec.color }}>{spec.value}</div>
+                <p className="text-gray-400 text-sm leading-relaxed">{spec.description}</p>
               </motion.div>
             ))}
           </div>
@@ -321,19 +315,19 @@ const ProductsPage: React.FC = () => {
             {nightCrawlerBenefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-100"
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:border-[#8CBD9B]/50"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-6">
-                  <benefit.icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: '#92E68E' }}>
+                  <benefit.icon className="w-6 h-6 text-black" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -341,7 +335,7 @@ const ProductsPage: React.FC = () => {
       </section>
 
       {/* Worm Castings Section */}
-      <section className="py-24 bg-gradient-to-br from-green-50 to-emerald-50">
+      <section className="py-24" style={{ background: 'linear-gradient(180deg, #0A1C22 0%, #101B24 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -350,11 +344,11 @@ const ProductsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="text-green-600">Blum Premium</span>
-              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"> Earth Worm Castings</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span style={{ color: '#8CBD9B' }}>Blum Premium </span>
+              <span className="bg-gradient-to-r from-[#80EF80] to-[#92E68E] bg-clip-text text-transparent">Earth Worm Castings</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Nature's perfect organic fertilizer - pure worm castings for superior plant growth
             </p>
           </motion.div>
@@ -367,21 +361,21 @@ const ProductsPage: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="grid grid-cols-2 gap-6">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#8CBD9B40' }}>
                   <img
                     src="https://static.lumi.new/c4/c4fb8b20fa15ee98fe20046f570636a7.webp"
                     alt="Blum Premium Earth Worm Castings Product"
                     className="w-full h-64 object-cover"
                   />
                 </div>
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#92E68E40' }}>
                   <img
                     src="https://static.lumi.new/f9/f9a8a5e8b9552c9c13d79667fafafd94.webp"
                     alt="Blum Castings Application"
                     className="w-full h-64 object-cover"
                   />
                 </div>
-                <div className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl">
+                <div className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#80EF8040' }}>
                   <img
                     src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?w=600"
                     alt="Healthy plants with worm castings"
@@ -397,11 +391,11 @@ const ProductsPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <h3 className="text-3xl font-bold text-white mb-6">
                 The Ultimate Organic Fertilizer
               </h3>
               
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
                 Blum Premium Earth Worm Castings are 100% pure, organic worm castings that provide 
                 slow-release nutrients and beneficial microorganisms. Perfect for gardens, lawns, 
                 houseplants, and commercial agriculture applications.
@@ -417,15 +411,15 @@ const ProductsPage: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 font-medium">{feature}</span>
+                    <CheckCircle className="w-6 h-6 flex-shrink-0" style={{ color: '#8CBD9B' }} />
+                    <span className="text-gray-300 font-medium">{feature}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="bg-green-100 rounded-2xl p-6">
-                <h4 className="text-xl font-bold text-green-800 mb-3">Trusted by Professionals</h4>
-                <p className="text-green-700">
+              <div className="rounded-2xl p-6 border" style={{ backgroundColor: '#8CBD9B15', borderColor: '#8CBD9B50' }}>
+                <h4 className="text-xl font-bold mb-3" style={{ color: '#92E68E' }}>Trusted by Professionals</h4>
+                <p style={{ color: '#8CBD9B' }}>
                   Our premium worm castings are supplied to big box stores, horticultural companies, 
                   churches, and professional growers who demand consistent, high-quality results.
                 </p>
@@ -437,20 +431,22 @@ const ProductsPage: React.FC = () => {
             {castingsSpecs.map((spec, index) => (
               <motion.div
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200"
+                className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/10"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = `${spec.color}50`}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${spec.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <spec.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: spec.color }}>
+                  <spec.icon className="w-8 h-8 text-black" />
                 </div>
                 
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{spec.title}</h3>
-                <div className="text-2xl font-bold text-green-600 mb-3">{spec.value}</div>
-                <p className="text-gray-600 text-sm leading-relaxed">{spec.description}</p>
+                <h3 className="text-lg font-bold text-white mb-2">{spec.title}</h3>
+                <div className="text-2xl font-bold mb-3" style={{ color: spec.color }}>{spec.value}</div>
+                <p className="text-gray-400 text-sm leading-relaxed">{spec.description}</p>
               </motion.div>
             ))}
           </div>
@@ -459,19 +455,19 @@ const ProductsPage: React.FC = () => {
             {castingsBenefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-100"
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:border-[#80EF80]/50"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
-                  <benefit.icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: '#80EF80' }}>
+                  <benefit.icon className="w-6 h-6 text-black" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -479,7 +475,7 @@ const ProductsPage: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900">
+      <section className="py-24" style={{ background: 'linear-gradient(135deg, #000000 0%, #0A1C22 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -487,41 +483,43 @@ const ProductsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Ready to Experience
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent"> Premium Quality?</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="text-white">Ready to Experience </span>
+              <span className="bg-gradient-to-r from-[#8CBD9B] via-[#80EF80] to-[#92E68E] bg-clip-text text-transparent">Premium Quality?</span>
             </h2>
             
-            <p className="text-xl text-emerald-100 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
               Whether you need premium night crawlers for fishing or organic worm castings for your garden, 
               National Bait Inc. delivers exceptional quality products trusted by professionals worldwide.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <motion.div
-                className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20"
+                className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border"
+                style={{ borderColor: '#8CBD9B40' }}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <h3 className="text-2xl font-bold text-white mb-4">Night Crawlers</h3>
-                <p className="text-emerald-100 mb-6">
+                <p className="text-gray-300 mb-6">
                   Premium fishing bait with year-round availability. Bulk orders and worldwide shipping available.
                 </p>
-                <div className="text-emerald-300 font-semibold text-lg">
+                <div className="font-semibold text-lg" style={{ color: '#92E68E' }}>
                   Contact us for wholesale pricing
                 </div>
               </motion.div>
 
               <motion.div
-                className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20"
+                className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border"
+                style={{ borderColor: '#92E68E40' }}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <h3 className="text-2xl font-bold text-white mb-4">Worm Castings</h3>
-                <p className="text-emerald-100 mb-6">
+                <p className="text-gray-300 mb-6">
                   Premium organic fertilizer for commercial and retail applications. Multiple package sizes available.
                 </p>
-                <div className="text-emerald-300 font-semibold text-lg">
+                <div className="font-semibold text-lg" style={{ color: '#80EF80' }}>
                   Perfect for big box stores & growers
                 </div>
               </motion.div>

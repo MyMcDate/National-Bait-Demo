@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 import Modal from './Modal';
 
 const Footer: React.FC = () => {
@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="bg-gray-900 text-white">
+      <footer className="text-white" style={{ background: 'linear-gradient(180deg, #0A1C22 0%, #000000 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
@@ -22,44 +22,82 @@ const Footer: React.FC = () => {
                   className="h-12 w-auto object-contain"
                 />
                 <div>
-                  <h3 className="text-xl font-bold">National Bait Inc.</h3>
-                  <p className="text-green-400 text-sm">Premium Night Crawlers</p>
+                  <h3 className="text-xl font-bold" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>National Bait Inc.</h3>
+                  <p className="text-sm" style={{ color: '#92E68E' }}>Premium Night Crawlers</p>
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-6 max-w-md">
+              <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
                 Your trusted source for premium quality night crawlers and fishing bait. 
                 We've been serving anglers with the finest live bait for over 60 years.
               </p>
               
-              <div className="flex items-center space-x-2 text-green-400">
+              <div className="flex items-center space-x-2 mb-6" style={{ color: '#80EF80' }}>
                 <Clock size={16} />
                 <span className="text-sm">Fresh bait delivered daily</span>
+              </div>
+
+              {/* Social Media Links */}
+              <div className="flex space-x-4">
+                <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all duration-300" style={{ '--hover-bg': '#80EF8020' } as any}>
+                  <Facebook size={20} style={{ color: '#8CBD9B' }} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all duration-300">
+                  <Instagram size={20} style={{ color: '#80EF80' }} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all duration-300">
+                  <Twitter size={20} style={{ color: '#92E68E' }} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all duration-300">
+                  <Linkedin size={20} style={{ color: '#8CBD9B' }} />
+                </a>
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
+              <h4 className="text-lg font-semibold mb-4" style={{ color: '#92E68E' }}>Quick Links</h4>
+              <ul className="space-y-3">
                 <li>
-                  <Link to="/" className="text-gray-300 hover:text-green-400 transition-colors">
-                    Home
+                  <Link to="/" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <span className="w-1.5 h-1.5 rounded-full mr-2 transition-all" style={{ backgroundColor: '#8CBD9B' }}></span>
+                    <span className="group-hover:translate-x-1 transition-transform">Home</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products" className="text-gray-300 hover:text-green-400 transition-colors">
-                    Products
+                  <Link to="/about" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <span className="w-1.5 h-1.5 rounded-full mr-2 transition-all" style={{ backgroundColor: '#80EF80' }}></span>
+                    <span className="group-hover:translate-x-1 transition-transform">About Us</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="text-gray-300 hover:text-green-400 transition-colors">
-                    About Us
+                  <Link to="/products" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <span className="w-1.5 h-1.5 rounded-full mr-2 transition-all" style={{ backgroundColor: '#92E68E' }}></span>
+                    <span className="group-hover:translate-x-1 transition-transform">Products</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-gray-300 hover:text-green-400 transition-colors">
-                    Contact
+                  <Link to="/packaging" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <span className="w-1.5 h-1.5 rounded-full mr-2 transition-all" style={{ backgroundColor: '#8CBD9B' }}></span>
+                    <span className="group-hover:translate-x-1 transition-transform">Packaging</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/certifications" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <span className="w-1.5 h-1.5 rounded-full mr-2 transition-all" style={{ backgroundColor: '#80EF80' }}></span>
+                    <span className="group-hover:translate-x-1 transition-transform">Certifications</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/shipping" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <span className="w-1.5 h-1.5 rounded-full mr-2 transition-all" style={{ backgroundColor: '#92E68E' }}></span>
+                    <span className="group-hover:translate-x-1 transition-transform">Shipping</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <span className="w-1.5 h-1.5 rounded-full mr-2 transition-all" style={{ backgroundColor: '#8CBD9B' }}></span>
+                    <span className="group-hover:translate-x-1 transition-transform">Contact</span>
                   </Link>
                 </li>
               </ul>
@@ -67,25 +105,32 @@ const Footer: React.FC = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-              <ul className="space-y-3">
-                <li className="flex items-center space-x-2">
-                  <Phone size={16} className="text-green-400" />
-                  <a href="tel:+19052780180" className="text-gray-300 hover:text-green-400 transition-colors">
+              <h4 className="text-lg font-semibold mb-4" style={{ color: '#92E68E' }}>Contact Us</h4>
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3 group cursor-pointer">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/10 group-hover:bg-white/20 transition-all" style={{ backgroundColor: '#8CBD9B20' }}>
+                    <Phone size={16} style={{ color: '#8CBD9B' }} />
+                  </div>
+                  <a href="tel:+19052780180" className="text-gray-400 hover:text-white transition-colors">
                     (905) 278-0180
                   </a>
                 </li>
-                <li className="flex items-center space-x-2">
-                  <Mail size={16} className="text-green-400" />
-                  <a href="mailto:info@nationalbait.com" className="text-gray-300 hover:text-green-400 transition-colors">
+                <li className="flex items-center space-x-3 group cursor-pointer">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/10 group-hover:bg-white/20 transition-all" style={{ backgroundColor: '#80EF8020' }}>
+                    <Mail size={16} style={{ color: '#80EF80' }} />
+                  </div>
+                  <a href="mailto:info@nationalbait.com" className="text-gray-400 hover:text-white transition-colors">
                     info@nationalbait.com
                   </a>
                 </li>
-                <li className="flex items-start space-x-2">
-                  <MapPin size={16} className="text-green-400 mt-0.5" />
-                  <span className="text-gray-300 text-sm">
-                    946 Lakeshore Road East Mississauga<br />
-                    Ontario L5G 2R4, CANADA
+                <li className="flex items-start space-x-3">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/10 mt-0.5" style={{ backgroundColor: '#92E68E20' }}>
+                    <MapPin size={16} style={{ color: '#92E68E' }} />
+                  </div>
+                  <span className="text-gray-400 text-sm leading-relaxed">
+                    946 Lakeshore Road East<br />
+                    Mississauga, Ontario<br />
+                    L5G 2R4, CANADA
                   </span>
                 </li>
               </ul>
@@ -93,21 +138,24 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="border-t mt-8 pt-8" style={{ borderColor: '#8CBD9B30' }}>
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm">
-                © 2025 National Bait Inc. All rights reserved.
+              <p className="text-gray-500 text-sm">
+                © 2025 National Bait Inc. All rights reserved. Built with excellence since 1965.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <button 
                   onClick={() => setShowPrivacy(true)}
-                  className="text-gray-400 hover:text-green-400 text-sm transition-colors"
+                  className="text-gray-500 hover:text-white text-sm transition-colors"
+                  style={{ '--hover-color': '#80EF80' } as any}
                 >
                   Privacy Policy
                 </button>
+                <span className="text-gray-700">•</span>
                 <button 
                   onClick={() => setShowTerms(true)}
-                  className="text-gray-400 hover:text-green-400 text-sm transition-colors"
+                  className="text-gray-500 hover:text-white text-sm transition-colors"
+                  style={{ '--hover-color': '#80EF80' } as any}
                 >
                   Terms of Service
                 </button>
@@ -115,6 +163,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Bottom Accent */}
+        <div className="h-1" style={{ background: 'linear-gradient(90deg, #8CBD9B 0%, #80EF80 50%, #92E68E 100%)' }}></div>
       </footer>
 
       {/* Privacy Policy Modal */}

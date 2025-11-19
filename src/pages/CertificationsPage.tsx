@@ -15,35 +15,35 @@ const CertificationsPage: React.FC = () => {
       title: "CFIA Compliance",
       description: "Canadian Food Inspection Agency certified for food safety and export standards",
       status: "Certified",
-      color: "from-emerald-500 to-teal-600"
+      color: "#92E68E"
     },
     {
       icon: Globe,
       title: "International Export License",
       description: "Licensed for export to Europe, United States, and international markets",
       status: "Active",
-      color: "from-blue-500 to-indigo-600"
+      color: "#80EF80"
     },
     {
       icon: Leaf,
       title: "Sustainable Practices",
       description: "Environmentally responsible harvesting and farming practices certification",
       status: "Verified",
-      color: "from-green-500 to-emerald-600"
+      color: "#8CBD9B"
     },
     {
       icon: Truck,
       title: "Transport Certification",
       description: "Certified for safe transport of live bait across provincial and international borders",
       status: "Licensed",
-      color: "from-amber-500 to-orange-600"
+      color: "#92E68E"
     },
     {
       icon: Eye,
       title: "AODA Compliance",
       description: "Accessibility for Ontarians with Disabilities Act - ensuring inclusive business practices",
       status: "Certified",
-      color: "from-purple-500 to-indigo-600"
+      color: "#80EF80"
     }
   ]
 
@@ -107,10 +107,10 @@ const CertificationsPage: React.FC = () => {
   ]
 
   return (
-    <div className="pt-20">
+    <div className="pt-20" style={{ backgroundColor: '#0B1418' }}>
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/9858904/pexels-photo-9858904.jpeg?_gl=1*a8lnw8*_ga*MzUxMzgwOTM5LjE3NTU3NTUxNTM.*_ga_8JE65Q40S6*czE3NTU3NjA0NjkkbzIkZzEkdDE3NTU3NjE1OTgkajYwJGwwJGgw')] bg-cover bg-center opacity-10"></div>
+      <section className="relative py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #0A1C22 100%)' }}>
+        <div className="absolute inset-0 opacity-10" style={{ background: `radial-gradient(circle at 30% 50%, #80EF80 0%, transparent 60%), radial-gradient(circle at 70% 70%, #8CBD9B 0%, transparent 60%)` }}></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -118,11 +118,11 @@ const CertificationsPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Certifications &
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent"> Compliance</span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="text-white">Certifications & </span>
+              <span className="bg-gradient-to-r from-[#8CBD9B] via-[#80EF80] to-[#92E68E] bg-clip-text text-transparent">Compliance</span>
             </h1>
-            <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Maintaining the highest standards of quality, safety, accessibility, and regulatory compliance 
               for nearly six decades of trusted service
             </p>
@@ -131,7 +131,7 @@ const CertificationsPage: React.FC = () => {
       </section>
 
       {/* Certifications Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24" style={{ backgroundColor: '#0B1418' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -140,11 +140,11 @@ const CertificationsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent"> Certifications</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="text-white">Our </span>
+              <span className="bg-gradient-to-r from-[#8CBD9B] to-[#80EF80] bg-clip-text text-transparent">Certifications</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Recognized certifications and licenses that ensure quality, safety, accessibility, and legal compliance
             </p>
           </motion.div>
@@ -153,7 +153,7 @@ const CertificationsPage: React.FC = () => {
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
-                className={`group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 ${
+                className={`group bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/10 ${
                   cert.title === "AODA Compliance" ? "cursor-pointer" : ""
                 }`}
                 initial={{ opacity: 0, y: 50 }}
@@ -162,23 +162,25 @@ const CertificationsPage: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
                 onClick={cert.title === "AODA Compliance" ? handleAODAClick : undefined}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = `${cert.color}50`}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${cert.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <cert.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: cert.color }}>
+                  <cert.icon className="w-8 h-8 text-black" />
                 </div>
                 
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-gray-900">{cert.title}</h3>
-                  <span className="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">
+                  <h3 className="text-lg font-bold text-white">{cert.title}</h3>
+                  <span className="text-xs font-semibold px-2 py-1 rounded-full text-black" style={{ backgroundColor: cert.color }}>
                     {cert.status}
                   </span>
                 </div>
                 
-                <p className="text-gray-600 text-sm leading-relaxed">{cert.description}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">{cert.description}</p>
                 
                 {cert.title === "AODA Compliance" && (
                   <div className="mt-4 text-center">
-                    <span className="text-purple-600 text-xs font-semibold">Click to view Multi-Year Accessibility Plan</span>
+                    <span className="text-xs font-semibold" style={{ color: cert.color }}>Click to view Multi-Year Accessibility Plan</span>
                   </div>
                 )}
               </motion.div>
@@ -188,7 +190,7 @@ const CertificationsPage: React.FC = () => {
       </section>
 
       {/* AODA Spotlight Section */}
-      <section className="py-24 bg-gradient-to-br from-purple-50 to-indigo-50">
+      <section className="py-24" style={{ background: 'linear-gradient(180deg, #0A1C22 0%, #101B24 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -197,11 +199,11 @@ const CertificationsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">AODA</span>
-              <span className="text-gray-900"> Accessibility Commitment</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="bg-gradient-to-r from-[#8CBD9B] to-[#80EF80] bg-clip-text text-transparent">AODA </span>
+              <span className="text-white">Accessibility Commitment</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               National Bait Inc. is committed to providing accessible services and ensuring equal opportunities for all customers
             </p>
           </motion.div>
@@ -213,44 +215,44 @@ const CertificationsPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+              <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-xl border" style={{ borderColor: '#8CBD9B40' }}>
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center">
-                    <Eye className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: '#80EF80' }}>
+                    <Eye className="w-8 h-8 text-black" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">AODA Compliance</h3>
-                    <p className="text-purple-600 font-medium">Accessibility for Ontarians with Disabilities Act</p>
+                    <h3 className="text-2xl font-bold text-white">AODA Compliance</h3>
+                    <p className="font-medium" style={{ color: '#92E68E' }}>Accessibility for Ontarians with Disabilities Act</p>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-400 leading-relaxed mb-6">
                   We are proud to maintain compliance with the Accessibility for Ontarians with Disabilities Act (AODA), 
                   demonstrating our commitment to creating barrier-free environments and inclusive customer experiences.
                 </p>
 
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Accessible customer service standards</span>
+                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#8CBD9B' }} />
+                    <span className="text-gray-300">Accessible customer service standards</span>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Information and communication accessibility</span>
+                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#80EF80' }} />
+                    <span className="text-gray-300">Information and communication accessibility</span>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Employment accessibility practices</span>
+                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#92E68E' }} />
+                    <span className="text-gray-300">Employment accessibility practices</span>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Design of public spaces consideration</span>
+                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#8CBD9B' }} />
+                    <span className="text-gray-300">Design of public spaces consideration</span>
                   </div>
                 </div>
 
-                <div className="mt-8 p-6 bg-purple-50 rounded-2xl">
-                  <h4 className="text-lg font-bold text-purple-800 mb-2">Official Documentation</h4>
-                  <p className="text-purple-700 text-sm">
+                <div className="mt-8 p-6 rounded-2xl" style={{ backgroundColor: '#8CBD9B15' }}>
+                  <h4 className="text-lg font-bold mb-2" style={{ color: '#92E68E' }}>Official Documentation</h4>
+                  <p className="text-sm" style={{ color: '#8CBD9B' }}>
                     Our complete AODA compliance documentation and accessibility plan are available upon request. 
                     We continuously review and update our practices to ensure ongoing compliance.
                   </p>
@@ -264,17 +266,17 @@ const CertificationsPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2" style={{ borderColor: '#80EF8040' }}>
                 <img
                   src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?w=600"
                   alt="Inclusive workplace and accessibility"
                   className="w-full h-96 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-6">
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">Inclusive Excellence</h4>
-                  <p className="text-gray-600 text-sm">
+                <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                  <h4 className="text-lg font-bold text-white mb-2">Inclusive Excellence</h4>
+                  <p className="text-gray-300 text-sm">
                     Creating accessible experiences for all customers while maintaining our commitment to premium quality products and services.
                   </p>
                 </div>
@@ -285,7 +287,7 @@ const CertificationsPage: React.FC = () => {
       </section>
 
       {/* Regulatory Compliance */}
-      <section className="py-24 bg-gradient-to-br from-emerald-50 to-teal-50">
+      <section className="py-24" style={{ backgroundColor: '#0B1418' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -294,11 +296,11 @@ const CertificationsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Regulatory
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent"> Compliance</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="text-white">Regulatory </span>
+              <span className="bg-gradient-to-r from-[#8CBD9B] via-[#80EF80] to-[#92E68E] bg-clip-text text-transparent">Compliance</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Comprehensive adherence to all applicable regulations and standards
             </p>
           </motion.div>
@@ -307,13 +309,13 @@ const CertificationsPage: React.FC = () => {
             {regulations.map((regulation, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-100"
+                className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:border-[#8CBD9B]/50"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{regulation.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">{regulation.title}</h3>
                 
                 <div className="space-y-4">
                   {regulation.items.map((item, idx) => (
@@ -325,8 +327,8 @@ const CertificationsPage: React.FC = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: (index * 0.2) + (idx * 0.1) }}
                     >
-                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 leading-relaxed">{item}</span>
+                      <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: idx % 3 === 0 ? '#8CBD9B' : idx % 3 === 1 ? '#80EF80' : '#92E68E' }} />
+                      <span className="text-gray-400 leading-relaxed">{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -337,7 +339,7 @@ const CertificationsPage: React.FC = () => {
       </section>
 
       {/* Quality Standards */}
-      <section className="py-24 bg-white">
+      <section className="py-24" style={{ background: 'linear-gradient(180deg, #0A1C22 0%, #101B24 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -346,11 +348,11 @@ const CertificationsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Quality
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent"> Standards</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="text-white">Quality </span>
+              <span className="bg-gradient-to-r from-[#8CBD9B] to-[#92E68E] bg-clip-text text-transparent">Standards</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Our commitment to excellence extends beyond compliance to industry-leading standards
             </p>
           </motion.div>
@@ -365,12 +367,12 @@ const CertificationsPage: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
-                  <standard.icon className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300" style={{ backgroundColor: index % 3 === 0 ? '#8CBD9B' : index % 3 === 1 ? '#80EF80' : '#92E68E' }}>
+                  <standard.icon className="w-10 h-10 text-black" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{standard.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{standard.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{standard.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{standard.description}</p>
               </motion.div>
             ))}
           </div>
@@ -378,7 +380,7 @@ const CertificationsPage: React.FC = () => {
       </section>
 
       {/* Legal Notice */}
-      <section className="py-24 bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900">
+      <section className="py-24" style={{ background: 'linear-gradient(135deg, #000000 0%, #0A1C22 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -387,24 +389,24 @@ const CertificationsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Legal
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent"> Compliance Statement</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="text-white">Legal </span>
+              <span className="bg-gradient-to-r from-[#8CBD9B] to-[#92E68E] bg-clip-text text-transparent">Compliance Statement</span>
             </h2>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20 max-w-4xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 border max-w-4xl mx-auto" style={{ borderColor: '#8CBD9B40' }}>
               <div className="flex items-center justify-center mb-6">
-                <Scale className="w-16 h-16 text-emerald-300" />
+                <Scale className="w-16 h-16" style={{ color: '#80EF80' }} />
               </div>
               
-              <p className="text-lg text-emerald-100 leading-relaxed mb-6">
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">
                 National Bait Inc. operates in full compliance with all applicable federal, provincial, 
                 and international regulations governing the harvest, processing, transport, and export 
                 of live fishing bait. Our operations are regularly audited and inspected to ensure 
                 continued adherence to the highest standards of quality, safety, accessibility, and environmental responsibility.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-8 mt-8 text-emerald-200">
+              <div className="grid md:grid-cols-2 gap-8 mt-8 text-gray-400">
                 <div>
                   <h4 className="font-bold text-white mb-2">Regulatory Bodies</h4>
                   <ul className="space-y-1 text-sm">
@@ -428,7 +430,7 @@ const CertificationsPage: React.FC = () => {
                 </div>
               </div>
               
-              <p className="text-emerald-300 font-semibold text-lg mt-8">
+              <p className="font-semibold text-lg mt-8" style={{ color: '#92E68E' }}>
                 Trusted by regulators and customers worldwide since 1965 - now with enhanced accessibility commitment
               </p>
             </div>
@@ -438,7 +440,7 @@ const CertificationsPage: React.FC = () => {
 
       {/* AODA PDF Modal */}
       {showAODAPDF && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col mx-auto">
             <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
               <h3 className="text-2xl font-bold text-gray-900">

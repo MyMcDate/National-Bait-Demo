@@ -363,21 +363,21 @@ const ProductsPage: React.FC = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#8CBD9B40' }}>
                   <img
-                    src="https://static.lumi.new/c4/c4fb8b20fa15ee98fe20046f570636a7.webp"
+                    src="/blumcasting1.jpg"
                     alt="Blum Premium Earth Worm Castings Product"
                     className="w-full h-64 object-cover"
                   />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#92E68E40' }}>
                   <img
-                    src="https://static.lumi.new/f9/f9a8a5e8b9552c9c13d79667fafafd94.webp"
+                    src="/blumbag.png"
                     alt="Blum Castings Application"
                     className="w-full h-64 object-cover"
                   />
                 </div>
                 <div className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#80EF8040' }}>
                   <img
-                    src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?w=600"
+                    src="/blumcasting2.jpg"
                     alt="Healthy plants with worm castings"
                     className="w-full h-48 object-cover"
                   />

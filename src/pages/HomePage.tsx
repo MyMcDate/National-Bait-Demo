@@ -97,6 +97,8 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      
+
       {/* Why Choose National Bait Inc Section */}
       <section className="py-20" style={{ backgroundColor: '#0B1418' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,8 +1,10 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Ruler, Palette, Globe, Award, Thermometer, Package, CheckCircle, Star, Leaf, Sprout, Recycle, Users } from 'lucide-react'
 
 const ProductsPage: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
   const nightCrawlerSpecs = [
     {
       icon: Ruler,
@@ -361,21 +363,33 @@ const ProductsPage: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="grid grid-cols-2 gap-6">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#8CBD9B40' }}>
+                <div 
+                  className="relative rounded-2xl overflow-hidden shadow-xl border-2 cursor-pointer hover:scale-105 transition-transform duration-300" 
+                  style={{ borderColor: '#8CBD9B40' }}
+                  onClick={() => setSelectedImage('/blumcasting1.jpg')}
+                >
                   <img
                     src="/blumcasting1.jpg"
                     alt="Blum Premium Earth Worm Castings Product"
                     className="w-full h-64 object-cover"
                   />
                 </div>
-                <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#92E68E40' }}>
+                <div 
+                  className="relative rounded-2xl overflow-hidden shadow-xl border-2 cursor-pointer hover:scale-105 transition-transform duration-300" 
+                  style={{ borderColor: '#92E68E40' }}
+                  onClick={() => setSelectedImage('/blumbag.png')}
+                >
                   <img
                     src="/blumbag.png"
                     alt="Blum Castings Application"
                     className="w-full h-64 object-cover"
                   />
                 </div>
-                <div className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#80EF8040' }}>
+                <div 
+                  className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl border-2 cursor-pointer hover:scale-105 transition-transform duration-300" 
+                  style={{ borderColor: '#80EF8040' }}
+                  onClick={() => setSelectedImage('/blumcasting2.jpg')}
+                >
                   <img
                     src="/blumcasting2.jpg"
                     alt="Healthy plants with worm castings"
@@ -527,6 +541,41 @@ const ProductsPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              className="relative max-w-5xl w-full"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={selectedImage}
+                alt="Blum Product Detail"
+                className="w-full h-auto rounded-3xl border-4 shadow-2xl"
+                style={{ borderColor: '#80EF80' }}
+              />
+              <button
+                className="absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center text-black font-bold"
+                style={{ backgroundColor: '#80EF80' }}
+                onClick={() => setSelectedImage(null)}
+              >
+                ✕
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

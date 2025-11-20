@@ -30,8 +30,6 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
   const handleLanguageSelect = (lang: 'en' | 'de') => {
     setSelectedLanguage(lang)
     setShowLanguageSelect(false)
-    // Here you would typically set the language in a global state or context
-    // For now, we'll just proceed with the loading
   }
 
   useEffect(() => {
@@ -60,13 +58,15 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
 
   if (showLanguageSelect) {
     return (
-      
-      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="fixed inset-0 bg-gradient-to-br from-teal-800 via-teal-600 to-emerald-700 flex items-center justify-center z-50 overflow-hidden"
+        className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #000000 0%, #0A1C22 100%)' }}
       >
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{ background: `radial-gradient(circle at 30% 50%, #80EF80 0%, transparent 60%), radial-gradient(circle at 70% 70%, #8CBD9B 0%, transparent 60%)` }}></div>
+
         {/* Top Left Product Image - Blum1.png */}
         <motion.div
           initial={{ x: -100, y: -100, opacity: 0, scale: 0.6 }}
@@ -75,10 +75,8 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           className="absolute top-8 left-8 z-10 hidden xl:block"
         >
           <div className="relative">
-            {/* Glowing backdrop */}
-            <div className="absolute inset-0 bg-teal-200/20 rounded-2xl blur-xl scale-110 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-2xl blur-xl scale-110 animate-pulse" style={{ backgroundColor: '#8CBD9B20' }}></div>
             
-            {/* Product container */}
             <motion.div
               animate={{ 
                 y: [0, -6, 0],
@@ -89,7 +87,8 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative w-90 h-60 rounded-2xl overflow-hidden border-3 border-white/40 shadow-xl bg-white/10 backdrop-blur-sm"
+              className="relative w-60 h-60 rounded-2xl overflow-hidden border-3 shadow-xl bg-white/5 backdrop-blur-sm"
+              style={{ borderColor: '#8CBD9B40' }}
             >
               <img 
                 src="Blum1.png" 
@@ -97,17 +96,14 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                 className="w-full h-full object-cover filter brightness-110 contrast-105"
               />
               
-              {/* Overlay effects */}
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-800/20 via-transparent to-white/5"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/5"></div>
               
-              {/* Shine effect */}
               <motion.div
                 animate={{ x: ['-100%', '200%'] }}
                 transition={{ duration: 6, repeat: Infinity, repeatDelay: 5 }}
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"
               ></motion.div>
 
-              {/* Product label */}
               <div className="absolute bottom-3 left-3 right-3">
                 <div className="bg-black/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
                   <p className="text-white font-semibold text-xs">Premium Collection</p>
@@ -115,71 +111,67 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
               </div>
             </motion.div>
 
-            {/* Floating ring */}
             <motion.div
               animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0, 0.2] }}
               transition={{ duration: 7, repeat: Infinity }}
-              className="absolute inset-0 border-2 border-teal-300/30 rounded-2xl scale-110"
+              className="absolute inset-0 border-2 rounded-2xl scale-110"
+              style={{ borderColor: '#8CBD9B30' }}
             ></motion.div>
           </div>
         </motion.div>
 
         {/* Top Center Product Image - 100-box.jpg */}
-<motion.div
-  initial={{ y: -100, opacity: 0, scale: 0.6 }}
-  animate={{ y: 0, opacity: 1, scale: 1 }}
-  transition={{ duration: 1.8, ease: "easeOut", delay: 1.3 }}
-  className="absolute top-8 left-[58%] transform -translate-x-1/2 z-10 hidden xl:block"
->
-  <div className="relative">
-    {/* Glowing backdrop */}
-    <div className="absolute inset-0 bg-cyan-200/20 rounded-2xl blur-xl scale-110 animate-pulse"></div>
-    
-    {/* Product container */}
-    <motion.div
-      animate={{ 
-        y: [0, -6, 0],
-        rotate: [0, -1, 1, 0]
-      }}
-      transition={{ 
-        duration: 7.5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-      className="relative w-60 h-60 rounded-2xl overflow-hidden border-3 border-white/40 shadow-xl bg-white/10 backdrop-blur-sm"
-    >
-      <img 
-        src="100-box.jpg" 
-        alt="Premium Bait Box Packaging - 100 Count" 
-        className="w-full h-full object-cover filter brightness-110 contrast-105"
-      />
-      
-      {/* Overlay effects */}
-      <div className="absolute inset-0 bg-gradient-to-t from-cyan-800/20 via-transparent to-white/5"></div>
-      
-      {/* Shine effect */}
-      <motion.div
-        animate={{ x: ['-100%', '200%'] }}
-        transition={{ duration: 5.5, repeat: Infinity, repeatDelay: 4.5 }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12"
-      ></motion.div>
+        <motion.div
+          initial={{ y: -100, opacity: 0, scale: 0.6 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1.8, ease: "easeOut", delay: 1.3 }}
+          className="absolute top-8 left-[58%] transform -translate-x-1/2 z-10 hidden xl:block"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 rounded-2xl blur-xl scale-110 animate-pulse" style={{ backgroundColor: '#80EF8020' }}></div>
+            
+            <motion.div
+              animate={{ 
+                y: [0, -6, 0],
+                rotate: [0, -1, 1, 0]
+              }}
+              transition={{ 
+                duration: 7.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative w-60 h-60 rounded-2xl overflow-hidden border-3 shadow-xl bg-white/5 backdrop-blur-sm"
+              style={{ borderColor: '#80EF8040' }}
+            >
+              <img 
+                src="100-box.jpg" 
+                alt="Premium Bait Box Packaging - 100 Count" 
+                className="w-full h-full object-cover filter brightness-110 contrast-105"
+              />
+              
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/5"></div>
+              
+              <motion.div
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ duration: 5.5, repeat: Infinity, repeatDelay: 4.5 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12"
+              ></motion.div>
 
-      {/* Product label */}
-      <div className="absolute bottom-3 left-3 right-3">
-        <div className="bg-black/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
-          <p className="text-white font-semibold text-xs">Professional Packaging</p>
-        </div>
-      </div>
-    </motion.div>
+              <div className="absolute bottom-3 left-3 right-3">
+                <div className="bg-black/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
+                  <p className="text-white font-semibold text-xs">Professional Packaging</p>
+                </div>
+              </div>
+            </motion.div>
 
-    {/* Floating ring */}
-    <motion.div
-      animate={{ scale: [1, 1.18, 1], opacity: [0.2, 0, 0.2] }}
-      transition={{ duration: 6.5, repeat: Infinity }}
-      className="absolute inset-0 border-2 border-cyan-300/30 rounded-2xl scale-110"
-    ></motion.div>
-  </div>
-</motion.div>
+            <motion.div
+              animate={{ scale: [1, 1.18, 1], opacity: [0.2, 0, 0.2] }}
+              transition={{ duration: 6.5, repeat: Infinity }}
+              className="absolute inset-0 border-2 rounded-2xl scale-110"
+              style={{ borderColor: '#80EF8030' }}
+            ></motion.div>
+          </div>
+        </motion.div>
 
         {/* Top Right Product Image - Blum2.png */}
         <motion.div
@@ -189,10 +181,8 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           className="absolute top-8 right-8 z-10 hidden xl:block"
         >
           <div className="relative">
-            {/* Glowing backdrop */}
-            <div className="absolute inset-0 bg-emerald-200/20 rounded-2xl blur-xl scale-110 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-2xl blur-xl scale-110 animate-pulse" style={{ backgroundColor: '#92E68E20' }}></div>
             
-            {/* Product container */}
             <motion.div
               animate={{ 
                 y: [0, -7, 0],
@@ -203,7 +193,8 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative w-60 h-64 rounded-2xl overflow-hidden border-3 border-white/40 shadow-xl bg-white/10 backdrop-blur-sm"
+              className="relative w-60 h-64 rounded-2xl overflow-hidden border-3 shadow-xl bg-white/5 backdrop-blur-sm"
+              style={{ borderColor: '#92E68E40' }}
             >
               <img 
                 src="Blum2.png" 
@@ -211,17 +202,14 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                 className="w-full h-full object-cover filter brightness-110 contrast-105"
               />
               
-              {/* Overlay effects */}
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-800/20 via-transparent to-white/5"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/5"></div>
               
-              {/* Shine effect */}
               <motion.div
                 animate={{ x: ['-100%', '200%'] }}
                 transition={{ duration: 5, repeat: Infinity, repeatDelay: 4 }}
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12"
               ></motion.div>
 
-              {/* Product label */}
               <div className="absolute bottom-3 left-3 right-3">
                 <div className="bg-black/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
                   <p className="text-white font-semibold text-xs">Fresh & Quality</p>
@@ -229,21 +217,16 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
               </div>
             </motion.div>
 
-            {/* Floating ring */}
             <motion.div
               animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0, 0.2] }}
               transition={{ duration: 6, repeat: Infinity }}
-              className="absolute inset-0 border-2 border-emerald-300/30 rounded-2xl scale-110"
+              className="absolute inset-0 border-2 rounded-2xl scale-110"
+              style={{ borderColor: '#92E68E30' }}
             ></motion.div>
           </div>
         </motion.div>
 
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"></div>
-        </div>
-
-        {/* Left Side Product Image - iPhone Style */}
+        {/* Left Side Product Image */}
         <motion.div
           initial={{ x: -100, opacity: 0, scale: 0.8 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -251,11 +234,9 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block"
         >
           <div className="relative">
-            {/* Glowing backdrop for product image */}
-            <div className="absolute inset-0 bg-white/20 rounded-2xl blur-2xl scale-110"></div>
-            <div className="absolute inset-0 bg-teal-400/20 rounded-2xl blur-xl scale-105 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-2xl blur-2xl scale-110" style={{ backgroundColor: '#8CBD9B20' }}></div>
+            <div className="absolute inset-0 rounded-2xl blur-xl scale-105 animate-pulse" style={{ backgroundColor: '#80EF8020' }}></div>
             
-            {/* Product image container with iPhone-style border */}
             <motion.div
               animate={{ 
                 y: [0, -10, 0],
@@ -266,43 +247,41 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative w-80 h-96 rounded-2xl overflow-hidden border-4 border-white/30 shadow-2xl bg-black/20 backdrop-blur-sm"
+              className="relative w-80 h-96 rounded-2xl overflow-hidden border-4 shadow-2xl bg-black/20 backdrop-blur-sm"
+              style={{ borderColor: '#8CBD9B30' }}
             >
               <img 
                 src="Bait_post2.jpg" 
-                alt="Premium Bait Products Collection - Left" 
+                alt="Premium Bait Products Collection" 
                 className="w-full h-full object-cover filter brightness-105 contrast-105"
               />
               
-              {/* iPhone-style overlay effects */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10"></div>
               
-              {/* Subtle shine effect */}
               <motion.div
                 animate={{ x: ['-100%', '200%'] }}
                 transition={{ duration: 5, repeat: Infinity, repeatDelay: 4 }}
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"
               ></motion.div>
 
-              {/* Product label overlay */}
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                   <p className="text-white font-bold text-sm">Premium Bait</p>
-                  <p className="text-teal-200 text-xs">Fresh & Available</p>
+                  <p className="text-xs" style={{ color: '#92E68E' }}>Fresh & Available</p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Floating rings around product image */}
             <motion.div
               animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0, 0.3] }}
               transition={{ duration: 6, repeat: Infinity }}
-              className="absolute inset-0 border-2 border-teal-300/30 rounded-2xl scale-110"
+              className="absolute inset-0 border-2 rounded-2xl scale-110"
+              style={{ borderColor: '#8CBD9B30' }}
             ></motion.div>
           </div>
         </motion.div>
 
-        {/* Right Side Product Image - iPhone Style */}
+        {/* Right Side Product Image */}
         <motion.div
           initial={{ x: 100, opacity: 0, scale: 0.8 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -310,11 +289,9 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           className="absolute right-8 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block"
         >
           <div className="relative">
-            {/* Glowing backdrop for product image */}
-            <div className="absolute inset-0 bg-white/20 rounded-2xl blur-2xl scale-110"></div>
-            <div className="absolute inset-0 bg-emerald-400/20 rounded-2xl blur-xl scale-105 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-2xl blur-2xl scale-110" style={{ backgroundColor: '#92E68E20' }}></div>
+            <div className="absolute inset-0 rounded-2xl blur-xl scale-105 animate-pulse" style={{ backgroundColor: '#80EF8020' }}></div>
             
-            {/* Product image container with iPhone-style border */}
             <motion.div
               animate={{ 
                 y: [0, -8, 0],
@@ -325,38 +302,36 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative w-100 h-[26rem] rounded-2xl overflow-hidden border-4 border-white/30 shadow-2xl bg-black/20 backdrop-blur-sm"
+              className="relative w-96 h-[26rem] rounded-2xl overflow-hidden border-4 shadow-2xl bg-black/20 backdrop-blur-sm"
+              style={{ borderColor: '#92E68E30' }}
             >
               <img 
                 src="baitproducts.jpg" 
-                alt="Premium Bait Products in Fridge - iPhone Style" 
+                alt="Premium Bait Products in Fridge" 
                 className="w-full h-full object-cover filter brightness-105 contrast-105"
               />
               
-              {/* iPhone-style overlay effects */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10"></div>
               
-              {/* Subtle shine effect */}
               <motion.div
                 animate={{ x: ['-100%', '200%'] }}
                 transition={{ duration: 4, repeat: Infinity, repeatDelay: 3 }}
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"
               ></motion.div>
 
-              {/* Product label overlay */}
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                   <p className="text-white font-bold text-sm">Premium Bait</p>
-                  <p className="text-teal-200 text-xs">Fresh & Ready</p>
+                  <p className="text-xs" style={{ color: '#80EF80' }}>Fresh & Ready</p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Floating rings around product image */}
             <motion.div
               animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0, 0.3] }}
               transition={{ duration: 5, repeat: Infinity }}
-              className="absolute inset-0 border-2 border-teal-300/30 rounded-2xl scale-110"
+              className="absolute inset-0 border-2 rounded-2xl scale-110"
+              style={{ borderColor: '#92E68E30' }}
             ></motion.div>
           </div>
         </motion.div>
@@ -368,7 +343,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
             className="mb-12"
           >
-            {/* Eagle Logo - Perfectly Centered Above Title */}
+            {/* NB Logo - BIGGER & CENTERED */}
             <motion.div
               initial={{ scale: 0, opacity: 0, y: -100 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -377,10 +352,10 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             >
               <div className="relative">
                 {/* Glowing backdrop */}
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl scale-150"></div>
-                <div className="absolute inset-0 bg-emerald-400/30 rounded-full blur-2xl scale-125 animate-pulse"></div>
+                <div className="absolute inset-0 rounded-full blur-3xl scale-150" style={{ backgroundColor: '#8CBD9B40' }}></div>
+                <div className="absolute inset-0 rounded-full blur-2xl scale-125 animate-pulse" style={{ backgroundColor: '#80EF8030' }}></div>
                 
-                {/* Eagle image with effects */}
+                {/* NB LOGO - BIGGER */}
                 <motion.div
                   animate={{ 
                     scale: [1, 1.05, 1],
@@ -391,38 +366,37 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl"
+                  className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 shadow-2xl"
+                  style={{ borderColor: '#8CBD9B50', backgroundColor: '#0B1418' }}
                 >
                   <img 
-                    src="eagle-logo.jpg" 
-                    alt="Majestic Eagle Logo" 
-                    className="w-full h-full object-cover"
+                    src="PNG-04.png" 
+                    alt="National Bait Inc. NB Logo" 
+                    className="w-full h-full object-contain p-6"
                   />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                 </motion.div>
 
                 {/* Radiating rings */}
                 <motion.div
                   animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute inset-0 border-2 border-white/30 rounded-full scale-125"
+                  className="absolute inset-0 border-2 rounded-full scale-125"
+                  style={{ borderColor: '#8CBD9B40' }}
                 ></motion.div>
                 <motion.div
                   animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0, 0.2] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                  className="absolute inset-0 border-2 border-emerald-300/30 rounded-full scale-150"
+                  className="absolute inset-0 border-2 rounded-full scale-150"
+                  style={{ borderColor: '#80EF8030' }}
                 ></motion.div>
               </div>
             </motion.div>
 
-            <h1 className="text-6xl md:text-8xl font-black text-white tracking-wider transform -rotate-2 mb-8">
-              
-            </h1>
-            <h2 className="text-3xl md:text-4xl font-bold text-teal-100 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
               NATIONAL BAIT INC.
             </h2>
-            <p className="text-lg text-white/80 italic font-medium mb-12">
+            <p className="text-lg text-gray-400 italic font-medium mb-12">
               Select Your Region / Wählen Sie Ihre Region
             </p>
           </motion.div>
@@ -432,26 +406,28 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleLanguageSelect('en')}
-              className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-teal-300/40 hover:border-teal-200 transition-all duration-300 min-w-[280px]"
+              className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border-2 hover:border-opacity-100 transition-all duration-300 min-w-[280px]"
+              style={{ borderColor: '#8CBD9B40' }}
             >
               <div className="flex items-center justify-center gap-4 mb-4">
-                <MapPin className="w-8 h-8 text-teal-200 group-hover:text-teal-100" />
-                <span className="text-3xl font-bold text-white group-hover:text-teal-100">U.S.A.</span>
+                <MapPin className="w-8 h-8" style={{ color: '#80EF80' }} />
+                <span className="text-3xl font-bold text-white">U.S.A.</span>
               </div>
-              <p className="text-white/80 font-medium">English</p>
+              <p className="text-gray-400 font-medium">English</p>
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleLanguageSelect('de')}
-              className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-teal-300/40 hover:border-teal-200 transition-all duration-300 min-w-[280px]"
+              className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border-2 hover:border-opacity-100 transition-all duration-300 min-w-[280px]"
+              style={{ borderColor: '#92E68E40' }}
             >
               <div className="flex items-center justify-center gap-4 mb-4">
-                <MapPin className="w-8 h-8 text-teal-200 group-hover:text-teal-100" />
-                <span className="text-3xl font-bold text-white group-hover:text-teal-100">EUROPE</span>
+                <MapPin className="w-8 h-8" style={{ color: '#92E68E' }} />
+                <span className="text-3xl font-bold text-white">EUROPE</span>
               </div>
-              <p className="text-white/80 font-medium">Deutsch</p>
+              <p className="text-gray-400 font-medium">Deutsch</p>
             </motion.button>
           </div>
         </div>
@@ -464,16 +440,14 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed inset-0 bg-gradient-to-br from-teal-700 via-teal-500 to-emerald-600 flex items-center justify-center z-50 overflow-hidden"
+      className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #000000 0%, #0A1C22 100%)' }}
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12"></div>
-      </div>
-
+      <div className="absolute inset-0 opacity-5" style={{ background: `radial-gradient(circle at 30% 50%, #80EF80 0%, transparent 60%), radial-gradient(circle at 70% 70%, #8CBD9B 0%, transparent 60%)` }}></div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-8">
-        {/* Eagle Logo positioned above National Bait Inc */}
+        {/* NB LOGO - BIGGER positioned above National Bait Inc */}
         <motion.div
           initial={{ scale: 0, opacity: 0, y: -50 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -481,12 +455,12 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           className="mb-8 flex justify-center"
         >
           <div className="relative">
-            {/* Multiple glowing backdrops for dramatic effect */}
-            <div className="absolute inset-0 bg-white/30 rounded-full blur-3xl scale-200 animate-pulse"></div>
-            <div className="absolute inset-0 bg-emerald-400/40 rounded-full blur-2xl scale-150"></div>
-            <div className="absolute inset-0 bg-teal-300/30 rounded-full blur-xl scale-125"></div>
+            {/* Multiple glowing backdrops */}
+            <div className="absolute inset-0 rounded-full blur-3xl scale-200 animate-pulse" style={{ backgroundColor: '#8CBD9B30' }}></div>
+            <div className="absolute inset-0 rounded-full blur-2xl scale-150" style={{ backgroundColor: '#80EF8040' }}></div>
+            <div className="absolute inset-0 rounded-full blur-xl scale-125" style={{ backgroundColor: '#92E68E30' }}></div>
             
-            {/* Main eagle image with enhanced styling */}
+            {/* NB LOGO - EVEN BIGGER FOR LOADING */}
             <motion.div
               animate={{ 
                 scale: [1, 1.08, 1],
@@ -498,15 +472,15 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white/50 shadow-2xl"
+              className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 shadow-2xl"
+              style={{ borderColor: '#80EF8050', backgroundColor: '#0B1418' }}
             >
               <img 
-                src="PNG-05.png" 
-                alt="Majestic Eagle - National Bait Logo" 
-                className="w-full h-full object-cover filter brightness-110 contrast-110"
+                src="PNG-04.png" 
+                alt="National Bait Inc. - NB Logo" 
+                className="w-full h-full object-contain p-6 filter brightness-110 contrast-110"
               />
-              {/* Artistic overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-900/30 via-transparent to-emerald-400/10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10"></div>
               
               {/* Shine effect */}
               <motion.div
@@ -520,29 +494,31 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             <motion.div
               animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0, 0.4] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="absolute inset-0 border-3 border-white/40 rounded-full scale-125"
+              className="absolute inset-0 border-3 rounded-full scale-125"
+              style={{ borderColor: '#8CBD9B40' }}
             ></motion.div>
             <motion.div
               animate={{ scale: [1, 1.6, 1], opacity: [0.3, 0, 0.3] }}
               transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-              className="absolute inset-0 border-2 border-emerald-300/40 rounded-full scale-150"
+              className="absolute inset-0 border-2 rounded-full scale-150"
+              style={{ borderColor: '#80EF8040' }}
             ></motion.div>
             <motion.div
               animate={{ scale: [1, 1.8, 1], opacity: [0.2, 0, 0.2] }}
               transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-              className="absolute inset-0 border-2 border-teal-200/30 rounded-full scale-175"
+              className="absolute inset-0 border-2 rounded-full scale-175"
+              style={{ borderColor: '#92E68E30' }}
             ></motion.div>
           </div>
         </motion.div>
 
-        {/* Main Logo Section - National Bait Inc Centered */}
+        {/* Main Logo Section */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
           className="mb-8"
         >
-          {/* National Bait Inc Title */}
           <motion.div
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -560,15 +536,16 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-white/20"
+                className="w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-2"
+                style={{ backgroundColor: '#8CBD9B', borderColor: 'rgba(255,255,255,0.2)' }}
               >
-                <Fish className="w-8 h-8 text-white" />
+                <Fish className="w-8 h-8 text-black" />
               </motion.div>
               <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
                   NATIONAL BAIT INC.
                 </h2>
-                <p className="text-lg text-teal-100 italic font-medium">
+                <p className="text-lg italic font-medium" style={{ color: '#92E68E' }}>
                   {selectedLanguage === 'de' 
                     ? "Kanadas führender Anbieter für hochwertigen Angelköder"
                     : "Canada's Leading Supplier of Quality Fishing Bait"
@@ -585,18 +562,18 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             transition={{ duration: 0.8, delay: 1.3 }}
             className="mb-8"
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-teal-300/30">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border" style={{ borderColor: '#8CBD9B30' }}>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 BAITMASTER™
               </h3>
               <div className="flex items-center justify-center gap-8 text-white">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-teal-200" />
+                  <MapPin className="w-5 h-5" style={{ color: '#80EF80' }} />
                   <span className="text-xl font-semibold">U.S.A.</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-teal-200" />
-                  <span className="text-xl font-semibold text-teal-100">EUROPE</span>
+                  <MapPin className="w-5 h-5" style={{ color: '#92E68E' }} />
+                  <span className="text-xl font-semibold">EUROPE</span>
                 </div>
               </div>
             </div>
@@ -610,10 +587,10 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           transition={{ duration: 0.8, delay: 1.6 }}
           className="mb-8"
         >
-          <p className="text-xl md:text-2xl text-teal-100 font-bold">
+          <p className="text-xl md:text-2xl font-bold" style={{ color: '#80EF80' }}>
             {selectedLanguage === 'de' ? "Was lockt Fische an?" : "What hooks fish?"}
           </p>
-          <p className="text-lg text-white/80">
+          <p className="text-lg text-gray-400">
             {selectedLanguage === 'de' 
               ? "Nichts wie ein saftiger kanadischer Riesenwurm von Baitmaster."
               : "Nothing like a juicy giant Canadian Nightcrawler from Baitmaster."
@@ -630,19 +607,20 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
           transition={{ duration: 0.4 }}
           className="h-8 mb-8"
         >
-          <p className="text-lg text-white/80 font-medium">
+          <p className="text-lg text-gray-400 font-medium">
             {loadingTexts[selectedLanguage][currentText]}
           </p>
         </motion.div>
 
         {/* Progress Bar */}
         <div className="w-96 max-w-full mx-auto">
-          <div className="bg-white/20 rounded-full h-3 mb-4 overflow-hidden border border-teal-300/30">
+          <div className="bg-white/10 rounded-full h-3 mb-4 overflow-hidden border" style={{ borderColor: '#8CBD9B30' }}>
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.1 }}
-              className="h-full bg-gradient-to-r from-emerald-400 to-teal-300 rounded-full shadow-lg"
+              className="h-full rounded-full shadow-lg"
+              style={{ background: 'linear-gradient(90deg, #8CBD9B 0%, #80EF80 50%, #92E68E 100%)' }}
             />
           </div>
           
@@ -650,7 +628,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8 }}
-            className="text-white/80 text-sm font-semibold"
+            className="text-gray-400 text-sm font-semibold"
           >
             {selectedLanguage === 'de' ? `Lädt... ${progress}%` : `Loading... ${progress}%`}
           </motion.p>
@@ -695,25 +673,27 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoadingComplete }) => {
               delay: Math.random() * 4,
               ease: "linear"
             }}
-            className="absolute w-3 h-3 bg-white/50 rounded-full shadow-lg"
+            className="absolute w-3 h-3 rounded-full shadow-lg"
+            style={{ backgroundColor: i % 3 === 0 ? '#8CBD9B50' : i % 3 === 1 ? '#80EF8050' : '#92E68E50' }}
           />
         ))}
       </div>
 
-      {/* Corner Decorations with Eagle Theme */}
-      <div className="absolute top-4 right-4 w-20 h-20 border-4 border-white/20 rounded-full"></div>
-      <div className="absolute bottom-4 left-4 w-16 h-16 border-4 border-teal-300/30 rounded-full"></div>
+      {/* Corner Decorations */}
+      <div className="absolute top-4 right-4 w-20 h-20 border-4 rounded-full" style={{ borderColor: 'rgba(255,255,255,0.1)' }}></div>
+      <div className="absolute bottom-4 left-4 w-16 h-16 border-4 rounded-full" style={{ borderColor: '#8CBD9B30' }}></div>
       
-      {/* Additional eagle-themed decorative elements */}
       <motion.div
         animate={{ rotate: [0, 360] }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/4 right-8 w-8 h-8 border-2 border-emerald-300/40 rounded-full"
+        className="absolute top-1/4 right-8 w-8 h-8 border-2 rounded-full"
+        style={{ borderColor: '#80EF8040' }}
       ></motion.div>
       <motion.div
         animate={{ rotate: [360, 0] }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-1/4 left-8 w-6 h-6 border-2 border-teal-200/40 rounded-full"
+        className="absolute bottom-1/4 left-8 w-6 h-6 border-2 rounded-full"
+        style={{ borderColor: '#92E68E40' }}
       ></motion.div>
     </motion.div>
   )

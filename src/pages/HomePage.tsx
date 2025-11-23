@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
     {
       icon: Globe,
       title: 'Global Export',
-      description: 'Exporting millions of night crawlers annually to Europe and United States since 1965s'
+      description: 'Exporting millions of night crawlers annually to Europe and United States since the 1965s'
     },
     {
       icon: Thermometer,

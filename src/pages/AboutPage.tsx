@@ -127,7 +127,7 @@ const AboutPage: React.FC = () => {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2" style={{ borderColor: '#8CBD9B40' }}>
                 <img
-                  src="https://images.pexels.com/photos/1267324/pexels-photo-1267324.jpeg?_gl=1*ytyf4j*_ga*MzUxMzgwOTM5LjE3NTU3NTUxNTM.*_ga_8JE65Q40S6*czE3NTU3NTUxNTIkbzEkZzEkdDE3NTU3NTcxOTQkajMxJGwwJGgw"
+                  src="https://images.pexels.com/photos/6169056/pexels-photo-6169056.jpeg"
                   alt="National Bait Facilities"
                   className="w-full h-96 object-cover"
                 />

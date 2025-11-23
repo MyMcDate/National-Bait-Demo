@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import {Leaf, Recycle, Package, CheckCircle, Sparkles, Box, Shield, Award, Star} from 'lucide-react'
+import {Leaf, Recycle, Package, CheckCircle, Sparkles, Box, Shield, Award, Star, Thermometer, Store} from 'lucide-react'
 
 const PackagingPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const packagingImages = [
     {
-      url: "/12GarlicPack.jpeg",
-      title: "12 Baitmaster™ Garlic Giant Canadian Night Crawlers",
-      count: "12 Count",
-      description: "Biodegradable container with garlic scent",
-      bestSeller: false
-    },
-    {
       url: "/12Pack.jpeg",
       title: "12 Baitmaster™ Giant Canadian Night Crawlers",
       count: "12 Count",
       description: "Premium biodegradable packaging",
       bestSeller: true
+    },
+    {
+      url: "/12GarlicPack.jpeg",
+      title: "12 Baitmaster™ Garlic Giant Canadian Night Crawlers",
+      count: "12 Count",
+      description: "Biodegradable container with garlic scent",
+      bestSeller: false
     },
     {
       url: "/18DielliePack.jpeg",
@@ -294,6 +294,154 @@ const PackagingPage: React.FC = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION: Professional Storage & Display */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'KAMERIK 105, sans-serif' }}>
+              <span className="text-white">Professional Storage &</span>
+              <span style={{ color: '#80EF80' }}> Display</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Temperature-controlled storage and professional retail presentation for maximum freshness
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Fridge Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="group cursor-pointer"
+              onClick={() => setSelectedImage('/Night Crawlers Fridge.jpg')}
+            >
+              <div className="relative overflow-hidden rounded-3xl border-4 shadow-2xl hover:shadow-[0_0_50px_rgba(128,239,128,0.3)] transition-all duration-500" style={{ borderColor: '#8CBD9B50' }}>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/Night Crawlers Fridge.jpg"
+                    alt="Temperature Controlled Refrigerated Storage"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#8CBD9B' }}>
+                        <Thermometer className="w-6 h-6 text-black" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-white">Temperature Control</h3>
+                    </div>
+                    <p className="text-gray-300 text-lg">
+                      Our premium night crawlers are stored in climate-controlled refrigeration at 36°F/+2°C, 
+                      ensuring maximum freshness and vitality for optimal fishing performance.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Info Badge */}
+                <motion.div
+                  className="absolute top-6 left-6 px-6 py-3 rounded-full font-bold text-sm backdrop-blur-sm"
+                  style={{ backgroundColor: '#8CBD9B' }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <span className="text-black">36°F STORAGE</span>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Marketing Post Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="group cursor-pointer"
+              onClick={() => setSelectedImage('/Baitmaster Post.jpg')}
+            >
+              <div className="relative overflow-hidden rounded-3xl border-4 shadow-2xl hover:shadow-[0_0_50px_rgba(146,230,142,0.3)] transition-all duration-500" style={{ borderColor: '#92E68E50' }}>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/Baitmaster Post.jpg"
+                    alt="Professional Retail Display - Baitmaster Brand"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#92E68E' }}>
+                        <Store className="w-6 h-6 text-black" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-white">Retail Excellence</h3>
+                    </div>
+                    <p className="text-gray-300 text-lg">
+                      Professional branding and presentation that stands out in any retail environment. 
+                      Our Baitmaster™ packaging is designed for maximum shelf appeal and customer confidence.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Info Badge */}
+                <motion.div
+                  className="absolute top-6 right-6 px-6 py-3 rounded-full font-bold text-sm backdrop-blur-sm"
+                  style={{ backgroundColor: '#92E68E' }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <span className="text-black">BAITMASTER™</span>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Features Row */}
+          <motion.div
+            className="grid md:grid-cols-3 gap-8 mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#80EF80' }}>
+                <Thermometer className="w-7 h-7 text-black" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Climate Controlled</h4>
+              <p className="text-gray-400">Precise temperature monitoring maintains optimal freshness 24/7</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#8CBD9B' }}>
+                <Store className="w-7 h-7 text-black" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Retail Ready</h4>
+              <p className="text-gray-400">Professional packaging designed for maximum shelf appeal</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#92E68E' }}>
+                <Shield className="w-7 h-7 text-black" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Quality Assured</h4>
+              <p className="text-gray-400">Every package meets our rigorous freshness and quality standards</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

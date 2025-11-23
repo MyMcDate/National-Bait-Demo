@@ -85,7 +85,7 @@ const ProductsPage: React.FC = () => {
     },
     {
       title: "Global Recognition",
-      description: "Exported worldwide since the 1965s as angling became popular",
+      description: "Exported worldwide since the 1960s as angling became popular",
       icon: Globe
     },
     {
@@ -123,7 +123,7 @@ const ProductsPage: React.FC = () => {
     },
     {
       title: "Commercial Grade",
-      description: "Trusted by big box stores, horticultural companies, and churches",
+      description: "Trusted by big box stores",
       icon: Users
     },
     {
@@ -434,8 +434,7 @@ const ProductsPage: React.FC = () => {
               <div className="rounded-2xl p-6 border" style={{ backgroundColor: '#8CBD9B15', borderColor: '#8CBD9B50' }}>
                 <h4 className="text-xl font-bold mb-3" style={{ color: '#92E68E' }}>Trusted by Professionals</h4>
                 <p style={{ color: '#8CBD9B' }}>
-                  Our premium worm castings are supplied to big box stores, horticultural companies, 
-                  churches, and professional growers who demand consistent, high-quality results.
+                  Our premium worm castings are supplied to big box stores, and professional growers who demand consistent, high-quality results.
                 </p>
               </div>
             </motion.div>

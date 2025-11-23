@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
     {
       icon: Globe,
       title: 'Global Export',
-      description: 'Exporting millions of night crawlers annually to Europe and United States since 1950s'
+      description: 'Exporting millions of night crawlers annually to Europe and United States since 1965s'
     },
     {
       icon: Thermometer,
@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
                 Premium Night Crawlers & Fishing Bait
               </h2>
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Built on a history of quality, innovation, and first-class service for over 6 decades. 
+                Built on a history of quality, innovation, and first-class service for 6 decades. 
                 Your trusted source for premium night crawlers and fishing bait.
               </p>
               

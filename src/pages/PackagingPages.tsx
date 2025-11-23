@@ -80,7 +80,7 @@ const PackagingPage: React.FC = () => {
     {
       icon: Shield,
       title: "Temperature Control",
-      description: "Maintains optimal freshness at 36°F/+2°C",
+      description: "Maintains optimal freshness at 34°-36 F",
       color: "#80EF80"
     },
     {
@@ -344,7 +344,7 @@ const PackagingPage: React.FC = () => {
                       <h3 className="text-3xl font-bold text-white">Temperature Control</h3>
                     </div>
                     <p className="text-gray-300 text-lg">
-                      Our premium night crawlers are stored in climate-controlled refrigeration at 36°F/+2°C, 
+                      Our premium night crawlers are stored in climate-controlled refrigeration at 34-36°F /+2°C, 
                       ensuring maximum freshness and vitality for optimal fishing performance.
                     </p>
                   </div>
@@ -358,7 +358,7 @@ const PackagingPage: React.FC = () => {
                   whileInView={{ scale: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <span className="text-black">36°F STORAGE</span>
+                  <span className="text-black">34-36°F STORAGE</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -511,7 +511,7 @@ const PackagingPage: React.FC = () => {
                 <div className="text-gray-300">Biodegradable</div>
               </div>
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                <div className="text-4xl font-bold mb-2" style={{ color: '#80EF80' }}>36°F</div>
+                <div className="text-4xl font-bold mb-2" style={{ color: '#80EF80' }}>34-36°F</div>
                 <div className="text-gray-300">Optimal Storage</div>
               </div>
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">

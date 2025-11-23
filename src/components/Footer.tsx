@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               
               <div className="flex items-center space-x-2 mb-6" style={{ color: '#80EF80' }}>
                 <Clock size={16} />
-                <span className="text-sm">Fresh bait delivered daily</span>
+                <span className="text-sm">Fresh bait delivered weekly</span>
               </div>
 
               {/* Social Media Links */}

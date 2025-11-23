@@ -124,7 +124,7 @@ const CertificationsPage: React.FC = () => {
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Maintaining the highest standards of quality, safety, accessibility, and regulatory compliance 
-              for nearly six decades of trusted service
+              for six decades of trusted service
             </p>
           </motion.div>
         </div>

@@ -209,11 +209,11 @@ const ShippingPage: React.FC = () => {
             style={{ borderColor: '#8CBD9B40' }}
           >
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-6 text-white">Comprehensive European Union Coverage</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">Comprehensive European Coverage</h3>
               <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                National Bait Inc. maintains strategic partnerships across the European Union. 
-                Our experienced distribution network has been serving Western Europe with 
-                reliability and expertise since the 1950s.
+                National Bait Inc. maintains partnerships in Europe. 
+                Our experienced distribution network has been serving Europe with 
+                reliability and expertise since the 1965s.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -222,7 +222,7 @@ const ShippingPage: React.FC = () => {
                     <MapPin className="w-6 h-6 text-black" />
                   </div>
                   <h4 className="font-bold mb-2 text-lg" style={{ color: '#92E68E' }}>Extensive Coverage</h4>
-                  <p className="text-gray-400">Comprehensive distribution network spanning all major European markets</p>
+                  <p className="text-gray-400">Comprehensive distribution network across all Europe</p>
                 </div>
                 <div className="bg-white/5 rounded-xl p-6 border border-white/20">
                   <div className="rounded-full p-3 w-12 h-12 mx-auto mb-4" style={{ backgroundColor: '#8CBD9B' }}>

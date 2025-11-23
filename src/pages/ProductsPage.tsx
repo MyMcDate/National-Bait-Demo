@@ -85,7 +85,7 @@ const ProductsPage: React.FC = () => {
     },
     {
       title: "Global Recognition",
-      description: "Exported worldwide since the 1950s as angling became popular",
+      description: "Exported worldwide since the 1965s as angling became popular",
       icon: Globe
     },
     {

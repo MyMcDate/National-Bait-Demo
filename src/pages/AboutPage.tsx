@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
       icon: Building
     },
     {
-      year: "1950s",
+      year: "1970s",
       title: "Export Beginnings",
       description: "Started exporting night crawlers as angling became a flourishing leisure activity",
       icon: MapPin
@@ -75,7 +75,7 @@ const AboutPage: React.FC = () => {
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Built on a history of quality, innovation, and first-class service - 
-              the key to our success for almost six decades
+              the key to our success for six decades and counting!
             </p>
           </motion.div>
         </div>
@@ -133,17 +133,7 @@ const AboutPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 
-                <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#92E68E' }}>
-                      <Calendar className="w-6 h-6 text-black" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-white">Since 1965</h3>
-                      <p className="text-gray-300">Nearly 60 years of excellence</p>
-                    </div>
-                  </div>
-                </div>
+                
               </div>
             </motion.div>
           </div>
@@ -227,7 +217,7 @@ const AboutPage: React.FC = () => {
               <span className="bg-gradient-to-r from-[#8CBD9B] via-[#80EF80] to-[#92E68E] bg-clip-text text-transparent">Values</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              The principles that have guided our success for nearly six decades
+              The principles that have guided our success for six decades
             </p>
           </motion.div>
 

@@ -130,7 +130,7 @@ const Footer: React.FC = () => {
                   <span className="text-gray-400 text-sm leading-relaxed">
                     946 Lakeshore Road East<br />
                     Mississauga, Ontario<br />
-                    L5G 2R4, CANADA
+                    L5E 1E4, CANADA
                   </span>
                 </li>
               </ul>
@@ -238,7 +238,7 @@ const Footer: React.FC = () => {
             <div className="bg-gray-50 p-4 rounded-lg mt-2">
               <p><strong>National Bait Inc.</strong></p>
               <p>946 Lakeshore Road East, Mississauga</p>
-              <p>Ontario L5G 2R4, CANADA</p>
+              <p>Ontario L5E 1E4, CANADA</p>
               <p>Email: info@nationalbait.com</p>
               <p>Phone: (905) 278-0180</p>
             </div>

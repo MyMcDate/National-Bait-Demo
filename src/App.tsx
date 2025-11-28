@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import LoadingPage from './components/LoadingPage'
 import Navigation from './components/Navigation'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
@@ -44,25 +43,6 @@ function AppContent() {
 }
 
 function App() {
-  const [showLoading, setShowLoading] = useState(true);
-
-  // Check if user has seen loading page this session
-  useEffect(() => {
-    const hasSeenLoading = sessionStorage.getItem('hasSeenLoading');
-    if (hasSeenLoading) {
-      setShowLoading(false);
-    }
-  }, []);
-
-  const handleLoadingComplete = () => {
-    sessionStorage.setItem('hasSeenLoading', 'true');
-    setShowLoading(false);
-  };
-
-  // Show loading page first
-  if (showLoading) {
-    return <LoadingPage onLoadingComplete={handleLoadingComplete} />;
-  }
 
   return (
     <>

@@ -82,9 +82,10 @@ const HomePage: React.FC = () => {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2" style={{ borderColor: '#8CBD9B40' }}>
                 <img
-                  src="https://images.pexels.com/photos/8918084/pexels-photo-8918084.jpeg?_gl=1*b1o6nj*_ga*MzUxMzgwOTM5LjE3NTU3NTUxNTM.*_ga_8JE65Q40S6*czE3NTU3NTUxNTIkbzEkZzEkdDE3NTU3NTU2NTUkajU5JGwwJGgw"
+                  src="/eagle.png"
                   alt="Fishing with Premium Bait"
-                  className="w-full h-96 object-cover"
+                  className="w-full h-[400px] object-cover object-center"
+    style={{ objectPosition: 'center 70%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
@@ -192,9 +193,9 @@ const HomePage: React.FC = () => {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#8CBD9B40' }}>
                   <img
-                    src="/baitpost.jpg"
+                    src="/testworm.jpg"
                     alt="Premium Night Crawlers and Earthworms"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-[400px] object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
                 </div>

@@ -191,15 +191,15 @@ const HomePage: React.FC = () => {
               </div>
 
               <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#8CBD9B40' }}>
-                  <img
-                    src="/testworm4.jpg"
-                    alt="Premium Night Crawlers and Earthworms"
-                    className="w-full h-96 object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                </div>
-              </div>
+  <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#8CBD9B40' }}>
+    <img
+      src="/testworm4.jpg"
+      alt="Premium Night Crawlers and Earthworms"
+      className="w-full  h-48 md:h-96 object-cover object-center"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+  </div>
+</div>
             </div>
           </motion.div>
 

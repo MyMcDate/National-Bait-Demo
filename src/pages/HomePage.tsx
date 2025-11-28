@@ -84,8 +84,8 @@ const HomePage: React.FC = () => {
                 <img
                   src="/eagle.png"
                   alt="Fishing with Premium Bait"
-                  className="w-full h-[400px] object-cover object-center"
-    style={{ objectPosition: 'center 70%' }}
+                  className="w-full h-[650px] object-cover object-center"
+    style={{ objectPosition: 'center 59%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
@@ -193,9 +193,9 @@ const HomePage: React.FC = () => {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl border-2" style={{ borderColor: '#8CBD9B40' }}>
                   <img
-                    src="/testworm.jpg"
+                    src="/testworm4.jpg"
                     alt="Premium Night Crawlers and Earthworms"
-                    className="w-full h-[400px] object-cover object-center"
+                    className="w-full h-96 object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
                 </div>

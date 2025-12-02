@@ -401,7 +401,7 @@ const ContactPage: React.FC = () => {
                   <div className="space-y-4 text-black">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-black rounded-full"></div>
-                      <span>Nearly 60 years of industry experience</span>
+                      <span>60 years of industry experience</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-black rounded-full"></div>

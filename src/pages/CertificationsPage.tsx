@@ -4,10 +4,7 @@ import { Shield, Award, CheckCircle, Globe, FileText, Scale, Truck, Leaf, Users,
 
 const CertificationsPage: React.FC = () => {
   const [showAODAPDF, setShowAODAPDF] = React.useState(false)
-
-  const handleAODAClick = () => {
-    setShowAODAPDF(true)
-  }
+  const [showAccessibilityPolicy, setShowAccessibilityPolicy] = React.useState(false)
 
   const certifications = [
     {
@@ -153,19 +150,20 @@ const CertificationsPage: React.FC = () => {
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
-                className={`group bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/10 ${
-                  cert.title === "AODA Compliance" ? "cursor-pointer" : ""
-                }`}
+                className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/10"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                onClick={cert.title === "AODA Compliance" ? handleAODAClick : undefined}
                 onMouseEnter={(e) => e.currentTarget.style.borderColor = `${cert.color}50`}
                 onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
               >
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: cert.color }}>
+                {/* Icon — purple background for AODA, green for all others */}
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                  style={{ backgroundColor: cert.title === "AODA Compliance" ? '#7C3AED' : cert.color }}
+                >
                   <cert.icon className="w-8 h-8 text-black" />
                 </div>
                 
@@ -178,9 +176,25 @@ const CertificationsPage: React.FC = () => {
                 
                 <p className="text-gray-400 text-sm leading-relaxed">{cert.description}</p>
                 
+                {/* AODA card — two PDF links */}
                 {cert.title === "AODA Compliance" && (
-                  <div className="mt-4 text-center">
-                    <span className="text-xs font-semibold" style={{ color: cert.color }}>Click to view Multi-Year Accessibility Plan</span>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setShowAODAPDF(true); }}
+                      className="text-xs font-semibold text-center transition-opacity hover:opacity-70 flex items-center justify-center gap-1"
+                      style={{ color: '#9B6FD4' }}
+                    >
+                      <FileText className="w-3 h-3" />
+                      Multi-Year Accessibility Plan
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setShowAccessibilityPolicy(true); }}
+                      className="text-xs font-semibold text-center transition-opacity hover:opacity-70 flex items-center justify-center gap-1"
+                      style={{ color: '#9B6FD4' }}
+                    >
+                      <FileText className="w-3 h-3" />
+                      Accessibility Policy
+                    </button>
                   </div>
                 )}
               </motion.div>
@@ -217,8 +231,8 @@ const CertificationsPage: React.FC = () => {
             >
               <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-xl border" style={{ borderColor: '#8CBD9B40' }}>
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: '#80EF80' }}>
-                    <Eye className="w-8 h-8 text-black" />
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: '#7C3AED' }}>
+                    <Eye className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">AODA Compliance</h3>
@@ -438,13 +452,13 @@ const CertificationsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* AODA PDF Modal */}
+      {/* Modal — Multi-Year Accessibility Plan */}
       {showAODAPDF && (
         <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col mx-auto">
             <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
               <h3 className="text-2xl font-bold text-gray-900">
-                Multi-Year Accessibility Plan (2025-2030)
+                Multi-Year Accessibility Plan (2025–2030)
               </h3>
               <button
                 onClick={() => setShowAODAPDF(false)}
@@ -457,7 +471,7 @@ const CertificationsPage: React.FC = () => {
             <div className="flex-1 p-6 overflow-hidden">
               <div className="h-full flex flex-col">
                 <div className="text-center mb-6 flex-shrink-0">
-                  <FileText className="w-12 h-12 text-purple-600 mx-auto mb-3" />
+                  <FileText className="w-12 h-12 mx-auto mb-3" style={{ color: '#7C3AED' }} />
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Multi-Year Accessibility Plan (2025–2030)
                   </h4>
@@ -466,7 +480,6 @@ const CertificationsPage: React.FC = () => {
                   </p>
                 </div>
 
-                {/* PDF Viewer */}
                 <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50 flex-1 min-h-0">
                   <iframe
                     src="/documents/OfficialAODA.pdf#toolbar=1&navpanes=1&scrollbar=1&view=FitH"
@@ -479,10 +492,11 @@ const CertificationsPage: React.FC = () => {
                       <div className="text-center p-8">
                         <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                         <p className="text-gray-600 mb-4">PDF viewer not supported in your browser.</p>
-                        <a 
-                          href="/documents/OfficialAODA.pdf" 
+                        <a
+                          href="/documents/OfficialAODA.pdf"
                           download="National-Bait-AODA-Plan-2025-2030.pdf"
-                          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                          className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                          style={{ backgroundColor: '#7C3AED' }}
                         >
                           Download PDF
                         </a>
@@ -492,16 +506,104 @@ const CertificationsPage: React.FC = () => {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6 flex-shrink-0">
-                  <a 
-                    href="/documents/OfficialAODA.pdf" 
+                  <a
+                    href="/documents/OfficialAODA.pdf"
                     download="National-Bait-AODA-Plan-2025-2030.pdf"
-                    className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors text-center"
+                    className="text-white px-6 py-3 rounded-lg font-semibold transition-opacity hover:opacity-80 text-center"
+                    style={{ backgroundColor: '#7C3AED' }}
                   >
                     Download PDF
                   </a>
-                  <button 
+                  <button
                     onClick={() => window.open('/documents/OfficialAODA.pdf', '_blank')}
-                    className="border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                    className="px-6 py-3 rounded-lg font-semibold transition-colors text-center"
+                    style={{ border: '2px solid #7C3AED', color: '#7C3AED' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#7C3AED15')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                  >
+                    Open in New Tab
+                  </button>
+                </div>
+                
+                <div className="mt-4 text-center flex-shrink-0">
+                  <p className="text-gray-500 text-xs">
+                    Having trouble viewing? Try opening in a new tab or downloading the PDF directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal — Accessibility Policy */}
+      {showAccessibilityPolicy && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col mx-auto">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
+              <h3 className="text-2xl font-bold text-gray-900">
+                Accessibility Policy
+              </h3>
+              <button
+                onClick={() => setShowAccessibilityPolicy(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+              >
+                ×
+              </button>
+            </div>
+            
+            <div className="flex-1 p-6 overflow-hidden">
+              <div className="h-full flex flex-col">
+                <div className="text-center mb-6 flex-shrink-0">
+                  <FileText className="w-12 h-12 mx-auto mb-3" style={{ color: '#7C3AED' }} />
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
+                    Accessibility Policy
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    Accessibility for Ontarians with Disabilities Act, 2005 — Effective Date: January 15, 2026
+                  </p>
+                </div>
+
+                <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50 flex-1 min-h-0">
+                  <iframe
+                    src="/documents/National-Bait-Accessibility-Policy.pdf#toolbar=1&navpanes=1&scrollbar=1&view=FitH"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 'none' }}
+                    title="National Bait Accessibility Policy"
+                  >
+                    <div className="flex items-center justify-center h-full bg-gray-100">
+                      <div className="text-center p-8">
+                        <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                        <p className="text-gray-600 mb-4">PDF viewer not supported in your browser.</p>
+                        <a
+                          href="/documents/National-Bait-Accessibility-Policy.pdf"
+                          download="National-Bait-Accessibility-Policy.pdf"
+                          className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                          style={{ backgroundColor: '#7C3AED' }}
+                        >
+                          Download PDF
+                        </a>
+                      </div>
+                    </div>
+                  </iframe>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6 flex-shrink-0">
+                  <a
+                    href="/documents/National-Bait-Accessibility-Policy.pdf"
+                    download="National-Bait-Accessibility-Policy.pdf"
+                    className="text-white px-6 py-3 rounded-lg font-semibold transition-opacity hover:opacity-80 text-center"
+                    style={{ backgroundColor: '#7C3AED' }}
+                  >
+                    Download PDF
+                  </a>
+                  <button
+                    onClick={() => window.open('/documents/National-Bait-Accessibility-Policy.pdf', '_blank')}
+                    className="px-6 py-3 rounded-lg font-semibold transition-colors text-center"
+                    style={{ border: '2px solid #7C3AED', color: '#7C3AED' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#7C3AED15')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                   >
                     Open in New Tab
                   </button>
